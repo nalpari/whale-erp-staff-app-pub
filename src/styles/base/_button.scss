@@ -1,0 +1,124 @@
+@use "../abstracts" as *;
+
+/******************** btn-color 모음 *****************/
+.black {
+  background-color: $normal-back-color;
+  color: $normal-font-color;
+  &.active,
+  &:active {
+    background-color: $normal-a-back-color;
+  }
+  &:disabled {
+    background-color: $normal-d-back-color;
+  }
+}
+.org {
+  background-color: $org-back-color;
+  color: $org-font-color;
+  &.active,
+  &:active {
+    background-color: $org-a-back-color;
+  }
+  &:disabled {
+    background-color: $org-d-back-color;
+  }
+}
+.pink {
+  background-color: $pink-back-color;
+  color: $pink-font-color;
+  &.active,
+  &:active {
+    background-color: $pink-a-back-color;
+  }
+  &:disabled {
+    background-color: $pink-d-back-color;
+  }
+}
+.outline {
+  background-color: $out-back-color;
+  color: $out-font-color;
+  border: 1px solid $out-border-color;
+  &.active {
+    background-color: #444;
+    color: #fff;
+  }
+  &:disabled {
+    background-color: $out-d-back-color;
+    color: $out-d-font-color;
+    border-color: $out-d-border-color;
+  }
+}
+.grey {
+  background-color: #ccc;
+  color: #fff;
+}
+.log {
+  background-color: $log-back-color;
+  color: $log-font-color;
+  &.active,
+  &:active {
+    background-color: $log-a-back-color;
+  }
+  &:disabled {
+    background-color: $log-d-back-color;
+  }
+}
+
+/******************** btn-type 모음 *****************/
+// btn-frame 공통
+@mixin btn-frame($height, $padding, $font-size, $i-size) {
+  @include flex(10px);
+  align-items: center;
+  justify-content: center;
+  height: $height;
+  padding: 0px $padding;
+  border-radius: 6px;
+  @include fontDefinition($font-size, $font-w-600, 135%);
+  font-family: "Pretendard", sans-serif;
+  letter-spacing: 0;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
+  &.ic-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// 데스크탑 small 버튼
+.btn-form {
+  @include btn-frame(48px, 24px, $n-btn-font, 24px);
+  &.min {
+    @include btn-frame(30px, 12px, $sn-btn-font, 24px);
+    font-weight: 500;
+  }
+}
+
+.select-btn {
+  display: block;
+  width: 100%;
+  height: 48px;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0 40px 0 16px;
+  background-image: url(/assets/images/common/select_arr.svg);
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 24px 24px;
+  span {
+    @include fontDefinition(15px, 400, 150%);
+    @include ellipsis(1);
+    color: #1a1a1a;
+    letter-spacing: -0.375px;
+  }
+}
+@media screen and (max-width: 321px) {
+  .btn-form {
+    font-size: 13px;
+    padding: 0 15px;
+  }
+}
