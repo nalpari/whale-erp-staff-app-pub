@@ -9,22 +9,6 @@ export default function Header() {
     <header>
       <div className="header-inner">
         <div className="header-top">
-          <div className="header-store-name">
-            힘이 나는 커피생활 을지로3가점
-          </div>
-          <div className="header-menu-btn">
-            <button
-              className="menu-btn"
-              onClick={() => setIsSideNavOpen(true)}
-            ></button>
-          </div>
-        </div>
-        <div className="header-body">
-          <div className="header-store-btn">
-            <button className="select-btn">
-              <span>힘이 나는 커피생활 을지로3가점</span>
-            </button>
-          </div>
           <div className="header-data-wrap">
             <div className="header-data-img">
               <Image
@@ -39,6 +23,19 @@ export default function Header() {
               </li>
               <li className="header-data-item">매장 매니저</li>
             </ul>
+          </div>
+          <div className="header-menu-btn">
+            <button
+              className="menu-btn"
+              onClick={() => setIsSideNavOpen(true)}
+            ></button>
+          </div>
+        </div>
+        <div className="header-body">
+          <div className="header-store-btn">
+            <button className="select-btn">
+              <span>힘이 나는 커피생활 을지로3가점</span>
+            </button>
           </div>
         </div>
       </div>

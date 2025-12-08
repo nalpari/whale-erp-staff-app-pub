@@ -1,0 +1,83 @@
+@use "../abstracts" as *;
+.badge {
+  flex: none;
+  display: inline-block;
+  @include fontDefinition(12px, 600, 150%);
+  color: #fff;
+  border-radius: 100px;
+  padding: 3px 8px;
+  margin-top: -1px;
+  &.todo {
+    background-color: #81b7fa;
+  }
+  &.break {
+    background-color: #f7818c;
+  }
+}
+
+.date-list-wrap {
+  margin-top: 28px;
+  .date-list-tit {
+    @include fontDefinition(18px, 600, 150%);
+    color: #1a1a1a;
+    padding: 0 24px 18px;
+    border-bottom: 1px solid #ededed;
+  }
+}
+
+.date-cont-list {
+  padding: 0 24px;
+  .date-cont-item {
+    padding: 24px 0 18px;
+    border-bottom: 1px solid #ededed;
+  }
+}
+
+.date-cont-bx {
+  position: relative;
+  @include flex(0px);
+  align-items: center;
+  padding-left: 20px;
+  .date-cont-ring {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+}
+.date-cont-info {
+  .date-cont-info-name {
+    @include fontDefinition(15px, 500, 150%);
+    color: #1a1a1a;
+    margin-bottom: 0px;
+  }
+  .date-cont-info-time {
+    @include fontDefinition(14px, 400, 150%);
+    color: #1a1a1a;
+  }
+}
+.date-check-btn-wrap {
+  @include flex(4px);
+  align-items: center;
+  margin-left: auto;
+  .date-check-btn {
+    padding: 9px 14px;
+    border-radius: 80px;
+  }
+}
+.date-cont-todo {
+  @include flex(8px);
+  align-items: flex-start;
+  margin-top: 5px;
+  @include fontDefinition(14px, 400, 150%);
+  color: #2379e4;
+}
+.date-cont-break {
+  @include flex(8px);
+  align-items: flex-start;
+  margin-top: 5px;
+  @include fontDefinition(14px, 400, 150%);
+  color: #f34a5a;
+}

@@ -10,7 +10,7 @@
   background-color: #fff;
 }
 .container {
-  padding-top: 212px;
+  padding-top: 140px;
   flex: 1;
 }
 
@@ -37,12 +37,13 @@ header {
 .header-top {
   @include flex(10px);
   align-items: center;
-  padding: 16.5px 0;
+  padding: 7px 0;
   .header-store-name {
     flex: 1;
     text-align: center;
     @include fontDefinition(18px, 700, 150%);
     color: #fff;
+    word-break: keep-all;
   }
   .header-menu-btn {
     margin-left: auto;
@@ -57,10 +58,7 @@ header {
   }
 }
 .header-body {
-  padding: 20px 0;
-  .header-store-btn {
-    margin-bottom: 18px;
-  }
+  padding: 12px 0 20px;
 }
 .header-data-wrap {
   @include flex(10px);
