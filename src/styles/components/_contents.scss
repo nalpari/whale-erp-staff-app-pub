@@ -15,6 +15,7 @@
   }
 }
 
+// 할일 및 공휴일 리스트
 .date-list-wrap {
   margin-top: 28px;
   .date-list-tit {
@@ -80,4 +81,51 @@
   margin-top: 5px;
   @include fontDefinition(14px, 400, 150%);
   color: #f34a5a;
+}
+
+// 급여명세서 리스트
+.data-list-wrap {
+  padding-top: 28px;
+  .data-list-tit {
+    @include fontDefinition(18px, 600, 150%);
+    color: #1a1a1a;
+    padding: 0 24px 18px;
+    border-bottom: 1px solid #ddd;
+  }
+  .data-list-cont {
+    padding: 0 24px;
+    .data-list-item {
+      border-bottom: 1px solid #ededed;
+    }
+  }
+}
+.salary-info {
+  width: 100%;
+  padding: 24px 0 18px;
+  text-align: left;
+  .salary-info-tit {
+    @include fontDefinition(15px, 400, 150%);
+    color: #777;
+    margin-bottom: 3px;
+  }
+  .salary-info-inner {
+    @include flex(0px);
+    align-items: flex-end;
+    .salary-info-name {
+      @include fontDefinition(15px, 500, 150%);
+      color: #1a1a1a;
+      word-break: keep-all;
+    }
+    .salary-info-time {
+      margin-left: auto;
+      @include fontDefinition(15px, 400, 150%);
+      color: #777;
+    }
+  }
+}
+.data-list-empty {
+  padding: 40px 24px;
+  text-align: center;
+  @include fontDefinition(15px, 400, 150%);
+  color: #777;
 }

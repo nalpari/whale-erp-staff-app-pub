@@ -68,22 +68,34 @@ export default function Header() {
           <div className="side-nav-body">
             <ul className="side-nav-body-list">
               <li className="side-nav-body-item">
-                <Link href="/">회원 정보 수정</Link>
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  회원 정보 수정
+                </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/">비밀번호 변경</Link>
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  비밀번호 변경
+                </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/">근무 시간 조회 및 출퇴근 체크</Link>
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  근무 시간 조회 및 출퇴근 체크
+                </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/">근로계약서</Link>
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  근로계약서
+                </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/">급여명세서</Link>
+                <Link href="/salary" onClick={() => setIsSideNavOpen(false)}>
+                  급여명세서
+                </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/">TO-DO LIST</Link>
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  TO-DO LIST
+                </Link>
               </li>
             </ul>
           </div>
