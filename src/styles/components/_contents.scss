@@ -87,10 +87,19 @@
 .data-list-wrap {
   padding-top: 28px;
   .data-list-tit {
+    @include flex(0px);
+    align-items: center;
     @include fontDefinition(18px, 600, 150%);
     color: #1a1a1a;
     padding: 0 24px 18px;
     border-bottom: 1px solid #ddd;
+    .download-btn {
+      margin-left: auto;
+      height: 34px;
+      padding: 0 14px;
+      border-radius: 6px;
+      @include fontDefinition(14px, 600, 150%);
+    }
   }
   .data-list-cont {
     padding: 0 24px;
@@ -128,4 +137,98 @@
   text-align: center;
   @include fontDefinition(15px, 400, 150%);
   color: #777;
+}
+
+// 급여명세서 상세
+.salary-detail-wrap {
+  background-color: #f8f8f8;
+  .salary-detail-bx {
+    background-color: #fff;
+    margin-top: 10px;
+    border-top: 1px solid #f2f0f0;
+    border-bottom: 1px solid #f2f0f0;
+    &:first-child {
+      margin-top: 0;
+      border-top: none;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+.salary-detail-table-wrap {
+  padding: 0 24px;
+}
+.salary-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  th {
+    @include fontDefinition(15px, 500, 150%);
+    color: #777;
+    width: 72px;
+    padding: 18px 6px 12px 0;
+    border-bottom: 1px solid #ededed;
+  }
+  td {
+    @include fontDefinition(15px, 400, 150%);
+    color: #1a1a1a;
+    padding: 18px 0 12px 6px;
+    border-bottom: 1px solid #ededed;
+  }
+}
+.data-list-item-data {
+  @include flex(0px);
+  align-items: center;
+  padding: 18px 0 12px;
+  .data-list-item-data-name {
+    @include fontDefinition(15px, 500, 150%);
+    color: #777;
+  }
+  .data-list-item-data-value {
+    margin-left: auto;
+    @include fontDefinition(15px, 400, 150%);
+    color: #1a1a1a;
+  }
+}
+.data-list-total {
+  @include flex(0px);
+  align-items: center;
+  padding: 17px 24px 10px;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  margin-top: -1px;
+  background-color: #f8f8f8;
+  .data-list-total-name {
+    @include fontDefinition(16px, 600, 150%);
+    color: #1a1a1a;
+  }
+  .data-list-total-value {
+    margin-left: auto;
+    @include fontDefinition(16px, 600, 150%);
+    color: #1a1a1a;
+  }
+}
+.salary-detail-total-bx {
+  padding-top: 22px;
+  .salary-detail-total-name {
+    padding: 0 24px 13px;
+    @include fontDefinition(18px, 600, 150%);
+    color: #1a1a1a;
+  }
+}
+.salary-detail-total-value {
+  @include flex(0px);
+  align-items: center;
+  padding: 18px 24px 12px;
+  background-color: #444444;
+  .salary-detail-total-value-name {
+    @include fontDefinition(16px, 600, 150%);
+    color: #fff;
+  }
+  .salary-detail-total-value-value {
+    margin-left: auto;
+    @include fontDefinition(16px, 600, 150%);
+    color: #fff;
+  }
 }

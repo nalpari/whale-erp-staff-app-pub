@@ -1,4 +1,8 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function SalaryContents() {
+  const router = useRouter();
   const salaryListData = 11;
   return (
     <div className="data-list-wrap">
@@ -7,7 +11,10 @@ export default function SalaryContents() {
         <ul className="data-list-cont">
           {Array.from({ length: salaryListData }).map((_, index) => (
             <li className="data-list-item" key={index}>
-              <button className="salary-info">
+              <button
+                className="salary-info"
+                onClick={() => router.push(`/salary/${index + 1}`)}
+              >
                 <div className="salary-info-tit">2025년 10월 급여</div>
                 <div className="salary-info-inner">
                   <div className="salary-info-name">
