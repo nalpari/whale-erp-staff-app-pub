@@ -12,7 +12,9 @@
     "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "sass": "^1.94.2"
+    "react-modal-sheet": "^5.2.1",
+    "sass": "^1.94.2",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
