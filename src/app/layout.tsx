@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/style.scss";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import BottomSheetControler from "@/components/ui/BottomSheetControler";
+import BottomSheetController from "@/components/ui/BottomSheetController";
+import PopupController from "@/components/ui/PopupController";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,8 @@ export default function RootLayout({
           <div className="container">{children}</div>
           <Footer />
         </div>
-        <BottomSheetControler />
+        <BottomSheetController />
+        <PopupController />
       </body>
     </html>
   );

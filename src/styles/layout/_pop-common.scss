@@ -2,71 +2,68 @@
 
 .modal-popup {
   position: fixed;
-  top: 100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.75);
   z-index: 1100000;
-  transition: top 0.25s ease-in-out;
-  &.act {
-    top: 0;
-  }
   .modal-dialog {
-    display: flex;
     position: relative;
-    min-height: calc(100%);
-    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - (24px * 2));
+    max-width: 1280px;
     z-index: 111000;
+    margin: 24px auto;
     pointer-events: none;
     font-size: $font-ds-14;
+    &.min {
+      max-width: 307px;
+    }
+    &.alert {
+      max-width: 480px;
+    }
     .modal-content {
-      width: 100%;
       flex: 1;
-      display: flex;
-      flex-direction: column;
+      width: calc(100% - 32px);
       position: relative;
+      margin: 0 16px;
       background-clip: padding-box;
-      // background-color: $white-fff;
+      background-color: transparent;
       outline: 0 none;
       pointer-events: auto;
       .modal-header {
-        position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
         position: relative;
-        height: 66px;
-        background: #fff;
-        border-bottom: 1px solid #ededed;
-        &.ai {
-          border-bottom: none;
-        }
-        h3 {
-          @include fontDefinition(20px, 600, 140%);
-          color: #1a1a1a;
-        }
+        padding-bottom: 16px;
         .modal-close {
-          position: absolute;
-          right: 24px;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 36px;
-          height: 36px;
-          border: 1px solid #e2e2e2;
+          position: relative;
+          margin-left: auto;
+          display: block;
+          width: 44px;
+          height: 44px;
+          background-color: #fff;
           border-radius: 50%;
-          background: url(/assets/images/popup/pop_close.svg) no-repeat center
-            center;
-          background-size: 12px 12px;
+          &:before {
+            content: "";
+            @include absoluteCenter;
+            width: 12px;
+            height: 12px;
+            background: url(/assets/images/common/pop_close.svg) no-repeat
+              center center;
+            background-size: cover;
+          }
         }
       }
       .modal-body {
         position: relative;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
-        background-color: #fff;
+        // padding: 10px;
       }
       .modal-footer {
         display: -ms-flexbox;
@@ -78,62 +75,5 @@
         padding: 10px;
       }
     }
-  }
-}
-
-.modal-popup {
-  &.photo {
-    background-color: #1c1c1c;
-    .modal-dialog {
-      .modal-content {
-        .modal-header {
-          background-color: transparent;
-          border: none;
-          height: auto;
-          .modal-close {
-            position: absolute;
-            top: 18px;
-            transform: translateY(0);
-            right: unset;
-            left: 24px;
-            background: url(/assets/images/popup/photo_close.svg) no-repeat
-              center center;
-            background-size: 12px 12px;
-            z-index: 3;
-          }
-        }
-        .modal-body {
-          background-color: transparent;
-        }
-      }
-    }
-  }
-  &.alert {
-    top: 0;
-    background: rgba(0, 0, 0, 0.75);
-    .modal-dialog {
-      align-items: center;
-      min-height: calc(100% - (24px * 2));
-      max-width: 275px;
-      margin: 24px auto;
-      .modal-content {
-        display: block;
-        width: auto;
-        .modal-header {
-          background-color: #fff;
-        }
-        .modal-body {
-          padding: 32px 24px;
-          border-radius: 32px;
-          background-color: #fff;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 321px) {
-  .modal-popup .modal-dialog .modal-content .modal-header h3 {
-    font-size: 18px;
   }
 }

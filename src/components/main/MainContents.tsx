@@ -1,4 +1,8 @@
+"use client";
+import { usePopupController } from "@/store/usePopupController";
+
 export default function MainContents() {
+  const popupController = usePopupController();
   return (
     <div className="main-contents">
       <div className="date-list-wrap">
@@ -15,7 +19,12 @@ export default function MainContents() {
                 <div className="date-cont-info-time">10:00-18:00</div>
               </div>
               <div className="date-check-btn-wrap">
-                <button className="date-check-btn black">출근</button>
+                <button
+                  className="date-check-btn black"
+                  onClick={() => popupController.setQrCodePopup(true)}
+                >
+                  출근
+                </button>
                 <button className="date-check-btn outline">퇴근</button>
               </div>
             </div>

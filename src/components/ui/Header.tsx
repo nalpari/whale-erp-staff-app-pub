@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useBottomSheetControler } from "@/store/useBottomSheetControler";
+import { useBottomSheetController } from "@/store/useBottomSheetController";
 
 export default function Header() {
-  const bottomSheetControler = useBottomSheetControler();
+  const bottomSheetController = useBottomSheetController();
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   return (
     <header>
@@ -37,7 +37,7 @@ export default function Header() {
           <div className="header-store-btn">
             <button
               className="select-btn"
-              onClick={() => bottomSheetControler.setStoreSheet(true)}
+              onClick={() => bottomSheetController.setStoreSheet(true)}
             >
               <span>힘이 나는 커피생활 을지로3가점</span>
             </button>

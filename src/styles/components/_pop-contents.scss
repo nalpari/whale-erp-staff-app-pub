@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.qr-frame {
+  padding: 32px 24px 24px;
+  border-radius: 32px;
+  background-color: #fff;
+  .qr-frame-tit {
+    @include fontDefinition(16px, 600, 150%);
+    color: #1a1a1a;
+    margin-bottom: 17px;
+  }
+  .qr-btn-wrap {
+    @include flex(6px);
+    margin-top: 18px;
+  }
+}

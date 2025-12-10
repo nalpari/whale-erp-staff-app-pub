@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type BottomSheetControlerState = {
+type BottomSheetControllerState = {
   storeSheet: boolean;
   setStoreSheet: (isOpen: boolean) => void;
 };
@@ -13,7 +13,7 @@ const initialState: InitialStateType = {
   storeSheet: false,
 };
 
-export const useBottomSheetControler = create<BottomSheetControlerState>(
+export const useBottomSheetController = create<BottomSheetControllerState>(
   (set) => ({
     ...initialState,
     setStoreSheet: (isOpen: boolean) =>
