@@ -3,15 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useBottomSheetController } from "@/store/useBottomSheetController";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
   const bottomSheetController = useBottomSheetController();
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   return (
     <header>
       <div className="header-inner">
         <div className="header-top">
-          <div className="header-data-wrap">
+          <div
+            className="header-data-wrap"
+            onClick={() => router.push("/list")}
+          >
             <div className="header-data-img">
               <Image
                 src="/assets/images/common/avatar_icon.svg"
