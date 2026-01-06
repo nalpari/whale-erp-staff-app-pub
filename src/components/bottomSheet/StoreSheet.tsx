@@ -2,12 +2,16 @@ import { Sheet } from "react-modal-sheet";
 import { useBottomSheetController } from "@/store/useBottomSheetController";
 
 export default function StoreSheet() {
-  const bottomSheetController = useBottomSheetController();
+  // 필요한 상태와 함수만 선택적으로 구독
+  const storeSheet = useBottomSheetController((state) => state.storeSheet);
+  const setStoreSheet = useBottomSheetController(
+    (state) => state.setStoreSheet
+  );
 
   return (
     <Sheet
-      isOpen={bottomSheetController.storeSheet}
-      onClose={() => bottomSheetController.setStoreSheet(false)}
+      isOpen={storeSheet}
+      onClose={() => setStoreSheet(false)}
       detent="content"
       disableScrollLocking={true}
     >
@@ -36,9 +40,7 @@ export default function StoreSheet() {
           </div>
         </Sheet.Content>
       </Sheet.Container>
-      <Sheet.Backdrop
-        onTap={() => bottomSheetController.setStoreSheet(false)}
-      />
+      <Sheet.Backdrop onTap={() => setStoreSheet(false)} />
     </Sheet>
   );
 }

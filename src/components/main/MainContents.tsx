@@ -2,7 +2,8 @@
 import { usePopupController } from "@/store/usePopupController";
 
 export default function MainContents() {
-  const popupController = usePopupController();
+  // 함수만 구독 (함수 레퍼런스는 변하지 않음)
+  const setQrCodePopup = usePopupController((state) => state.setQrCodePopup);
   return (
     <div className="main-contents">
       <div className="date-list-wrap">
@@ -21,7 +22,7 @@ export default function MainContents() {
               <div className="date-check-btn-wrap">
                 <button
                   className="date-check-btn black"
-                  onClick={() => popupController.setQrCodePopup(true)}
+                  onClick={() => setQrCodePopup(true)}
                 >
                   출근
                 </button>

@@ -1,7 +1,8 @@
 import { usePopupController } from "@/store/usePopupController";
 
 export default function QrCodePopup() {
-  const popupController = usePopupController();
+  // 함수만 구독
+  const setQrCodePopup = usePopupController((state) => state.setQrCodePopup);
   return (
     <div className="modal-popup">
       <div className="modal-dialog min">
@@ -10,7 +11,7 @@ export default function QrCodePopup() {
             <h1></h1>
             <button
               className="modal-close"
-              onClick={() => popupController.setQrCodePopup(false)}
+              onClick={() => setQrCodePopup(false)}
             ></button>
           </div>
           <div className="modal-body">

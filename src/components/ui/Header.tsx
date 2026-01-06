@@ -7,7 +7,10 @@ import { useRouter } from "next/navigation";
 
 export default function Header() {
   const router = useRouter();
-  const bottomSheetController = useBottomSheetController();
+  // 필요한 함수만 선택적으로 구독 (함수는 변하지 않으므로 재렌더링 방지)
+  const setStoreSheet = useBottomSheetController(
+    (state) => state.setStoreSheet
+  );
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   return (
     <header>
@@ -40,10 +43,7 @@ export default function Header() {
         </div>
         <div className="header-body">
           <div className="header-store-btn">
-            <button
-              className="select-btn"
-              onClick={() => bottomSheetController.setStoreSheet(true)}
-            >
+            <button className="select-btn" onClick={() => setStoreSheet(true)}>
               <span>힘이 나는 커피생활 을지로3가점</span>
             </button>
           </div>

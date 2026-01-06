@@ -6,14 +6,12 @@ import { usePopupController } from "@/store/usePopupController";
 import QrCodePopup from "../popup/QrCodePopup";
 
 export default function PopupController() {
-  const popupController = usePopupController();
+  // 필요한 상태만 선택적으로 구독
+  const isQrCodePopupOpen = usePopupController((state) => state.QrCodePopup);
 
   useEffect(() => {
-    // 모든 팝업 상태를 배열로 확인
-    const isAnyPopupOpen = popupController.QrCodePopup;
-
     // body 클래스 토글
-    if (isAnyPopupOpen) {
+    if (isQrCodePopupOpen) {
       document.body.classList.add("open");
     } else {
       document.body.classList.remove("open");
@@ -23,7 +21,7 @@ export default function PopupController() {
     return () => {
       document.body.classList.remove("open");
     };
-  }, [popupController.QrCodePopup]);
+  }, [isQrCodePopupOpen]);
 
-  return <>{popupController.QrCodePopup && <QrCodePopup />}</>;
+  return <>{isQrCodePopupOpen && <QrCodePopup />}</>;
 }

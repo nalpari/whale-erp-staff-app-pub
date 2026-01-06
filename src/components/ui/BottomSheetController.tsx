@@ -5,14 +5,12 @@ import { useBottomSheetController } from "@/store/useBottomSheetController";
 import StoreSheet from "../bottomSheet/StoreSheet";
 
 export default function BottomSheetController() {
-  const bottomSheetController = useBottomSheetController();
+  // 필요한 상태만 선택적으로 구독
+  const storeSheet = useBottomSheetController((state) => state.storeSheet);
 
   useEffect(() => {
-    // 모든 팝업 상태를 배열로 확인
-    const isAnyBottomSheetOpen = bottomSheetController.storeSheet;
-
     // body 클래스 토글
-    if (isAnyBottomSheetOpen) {
+    if (storeSheet) {
       document.body.classList.add("open");
     } else {
       document.body.classList.remove("open");
@@ -22,7 +20,7 @@ export default function BottomSheetController() {
     return () => {
       document.body.classList.remove("open");
     };
-  }, [bottomSheetController.storeSheet]);
+  }, [storeSheet]);
 
-  return <>{bottomSheetController.storeSheet && <StoreSheet />}</>;
+  return <>{storeSheet && <StoreSheet />}</>;
 }
