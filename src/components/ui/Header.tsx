@@ -78,7 +78,7 @@ export default function Header() {
           <div className="side-nav-body">
             <ul className="side-nav-body-list">
               <li className="side-nav-body-item">
-                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                <Link href="/main" onClick={() => setIsSideNavOpen(false)}>
                   회원 정보 수정
                 </Link>
               </li>

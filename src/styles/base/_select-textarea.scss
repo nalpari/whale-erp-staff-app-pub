@@ -4,9 +4,8 @@
 @mixin select-form($height, $font-size) {
   display: block;
   width: 100%;
-  min-width: 150px;
   height: $height;
-  padding: 0px 16px;
+  padding: 0px 40px 0 16px;
   @include fontDefinition($font-size, $font-w-400, $line-h-140);
   border: 1px solid $sel-brd-default;
   border-radius: 6px;
@@ -15,7 +14,7 @@
   background-color: #fff;
   background-image: url(/assets/images/common/select_arr.svg);
   background-repeat: no-repeat;
-  background-position: right 8px center;
+  background-position: right 16px center;
   background-size: 24px 24px;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
@@ -40,9 +39,9 @@
 @mixin textarea-form($height, $font-size) {
   display: block;
   width: 100%;
-  min-width: 200px;
-  height: $height;
-  padding: 14 16px;
+  min-width: 100px;
+  min-height: $height;
+  padding: 12px 16px;
   @include fontDefinition($font-size, $font-w-400, $line-h-140);
   border: 1px solid $txtarea-brd-default;
   border-radius: 6px;
@@ -65,5 +64,5 @@
 
 // textarea 데스크탑
 .textarea-form {
-  @include textarea-form(140px, $txtarea-font);
+  @include textarea-form(80px, $txtarea-font);
 }

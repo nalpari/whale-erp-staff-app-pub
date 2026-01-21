@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+.login-contents{
+  padding: 32px 24px;
+}
+.login-header{
+  text-align: center;
+  margin-bottom: 24px;
+  .logo{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .login-b-tit{
+    @include fontDefinition(28px, 700, 150%);
+    color: #444;
+  }
+  .login-s-tit{
+    @include fontDefinition(13px, 500, 150%);
+    color: #444;
+  }
+}
+
+.login-form{
+  padding: 28px 16px 32px;
+  background-color: #F5F5F5;
+  border-radius: 12px;
+  .login-form-tit{
+    @include fontDefinition(18px, 600, 150%);
+    color: #444;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+.login-form-btn{
+  @include flex(8px);
+  button{
+    width: 100%;
+  }
+}

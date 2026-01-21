@@ -34,14 +34,19 @@
 .check-form-box {
   position: relative;
   label {
-    padding-left: 26px;
+    &.no-txt {
+      label {
+        padding-left: 20px;
+      }
+    }
+    padding-left: 28px;
     &::before {
       content: "";
       display: inline-block;
       position: absolute;
       width: 20px;
       height: 20px;
-      top: 0px;
+      top: -1px;
       left: 0;
       margin-left: 0px;
       border: 1px solid $check-c-bord;
@@ -55,11 +60,11 @@
       content: "";
       display: inline-block;
       position: absolute;
-      top: -1px;
+      top: -2px;
       left: -1px;
       width: 6px;
       height: 9px;
-      border: 1px solid transparent;
+      border: 2px solid transparent;
       border-left: none;
       border-top: none;
       transform: translate(7.75px, 4.5px) rotate(45deg);
@@ -69,15 +74,15 @@
     }
   }
   input[type="checkbox"]:checked + label {
-    color: #1a1a1a;
+    color: #222;
   }
   input[type="checkbox"]:checked + label::before {
     background-color: $check-c-back;
-    border-color: #1a1a1a;
+    border-color: $check-c-back;
   }
   input[type="checkbox"]:checked + label::after {
     content: "";
-    border-color: #1a1a1a;
+    border-color: #ffff;
   }
   input[type="checkbox"]:disabled + label {
     cursor: default;
@@ -126,6 +131,11 @@
 // radio box
 .radio-form-box {
   position: relative;
+  &.no-txt {
+    label {
+      padding-left: 20px;
+    }
+  }
   label {
     padding-left: 28px;
     &::before {
@@ -190,7 +200,6 @@
   display: inline-block;
   width: 44px;
   height: 24px;
-  padding-right: 12px;
   input {
     display: none;
   }
@@ -204,11 +213,11 @@
     background-color: #e0e0e0;
     border-radius: 20px;
     text-align: center;
-    line-height: $line-h-140;
-    color: $check-c-font;
-    font-size: $check-ds-font;
+    line-height: 24px;
+    color: #505050;
+    font-size: 14px;
     font-weight: $font-w-400;
-    text-indent: 54px;
+    text-indent: 52px;
     white-space: nowrap;
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
@@ -228,7 +237,7 @@
     }
   }
   input:checked + .slider {
-    background-color: $check-c-back;
+    background-color: #9ba7ba;
     &:before {
       transform: translateX(20px);
     }
@@ -238,5 +247,14 @@
       font-size: $check-mb-font;
       text-indent: 52px;
     }
+  }
+}
+.toggle-wrap {
+  flex: none;
+  @include flex(8px);
+  align-items: center;
+  .toggle-txt {
+    @include fontDefinition($font-ds-15, $font-w-400, $line-h-140);
+    color: #111;
   }
 }

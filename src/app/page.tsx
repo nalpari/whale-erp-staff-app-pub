@@ -1,5 +1,7 @@
-import Main from "./(sub)/main/page";
+"use client";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return <Main />;
+  const router = useRouter();
+  router.push("/main");
 }

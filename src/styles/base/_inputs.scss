@@ -20,7 +20,6 @@ input::-webkit-inner-spin-button {
   $font-color
 ) {
   width: 100%;
-  min-width: 150px;
   height: $height;
   padding: 0 16px;
   border-radius: 6px;
@@ -71,9 +70,9 @@ input::-webkit-inner-spin-button {
   }
   &:has(input:disabled),
   &:has(input:read-only) {
-    background-color: $input-back-disabled !important;
-    border-color: $input-brd-disabled !important;
-    color: $input-c-disabled !important;
+    background-color: $input-back-disabled;
+    border-color: $input-brd-disabled;
+    color: $input-c-disabled;
     button {
       cursor: default;
       pointer-events: none;
@@ -86,40 +85,39 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-position: center;
   }
-  &.disabled {
-    background-color: $input-back-disabled !important;
-    border-color: $input-brd-disabled !important;
-    color: $input-c-disabled !important;
-    button {
-      cursor: default;
-      pointer-events: none;
-    }
-  }
-  &.del {
-    .input-icon-btn {
+  .input-icon-btn {
+    &.del {
       width: 24px;
       height: 24px;
       background-image: url("/assets/images/common/input_delete.svg");
     }
-  }
-  &.err {
-    border-color: $input-brd-error;
-    color: $input-c-error;
-    .input-icon-btn {
+    &.pw {
       width: 16px;
       height: 16px;
-      background-image: url("/assets/images/common/input_err.svg");
-    }
-  }
-  &.pw {
-    padding-right: 10px;
-    .input-icon-btn {
-      width: 24px;
-      height: 24px;
       background-image: url("/assets/images/common/input_show.svg");
       &.show {
         background-image: url("/assets/images/common/input_hide.svg");
       }
+    }
+    &.search {
+      width: 24px;
+      height: 24px;
+      background-image: url("/assets/images/common/input_search.svg");
+    }
+    &.search-del {
+      width: 24px;
+      height: 24px;
+      background-image: url("/assets/images/common/search_del.svg");
+    }
+    &.show {
+      width: 16px;
+      height: 16px;
+      background-image: url("/assets/images/common/pw_show.svg");
+    }
+    &.hide {
+      width: 16px;
+      height: 16px;
+      background-image: url("/assets/images/common/pw_hidden.svg");
     }
   }
 }
@@ -127,33 +125,34 @@ input::-webkit-inner-spin-button {
 // 데스크탑 input default
 .input-frame {
   @include input-frame(
-    36px,
+    48px,
     $input-brd-default,
     $input-back-default,
     $input-font,
     $input-c-default
   );
   &:read-only {
-    border-color: $input-brd-disabled;
     background-color: $input-back-disabled;
-    cursor: default;
+    border-color: $input-brd-disabled;
+    color: $input-c-disabled;
   }
-}
-// 모바일 input default
-.input-log-frame {
-  @include input-frame(
-    48px,
-    none,
-    rgba(255, 255, 255, 0.85),
-    $input-font,
-    $input-c-default
-  );
 }
 
 // icon 있을때
 .input-icon-frame {
   @include input-icon-frame(48px, 15px, #ebebeb, $input-back-default);
 }
-.input-icon-log-frame {
-  @include input-icon-frame(48px, $input-font, none, rgba(255, 255, 255, 0.85));
+
+.file-btn {
+  input[type="file"] {
+    display: none;
+  }
+  .file-icon {
+    display: block;
+    width: 15px;
+    height: 20px;
+    background: url("/assets/images/contents/file_icon.svg") no-repeat center
+      center;
+    background-size: cover;
+  }
 }
