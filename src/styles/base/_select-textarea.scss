@@ -34,6 +34,10 @@
 .select-form {
   @include select-form(48px, $sel-font);
 }
+.select-btn{
+  text-align: left;
+  @include select-form(48px, $sel-font);
+}
 
 /******************** textarea-type 모음 *****************/
 @mixin textarea-form($height, $font-size) {

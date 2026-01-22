@@ -26,6 +26,32 @@ export default function Login() {
           <button className="btn-form login">로그인</button>
         </div>
       </div>
+      <div className="login-check-wrap">
+        <div className="check-form-box">
+          <input type="checkbox" id="login-check" />
+          <label htmlFor="login-check">로그인 유지</label>
+        </div>
+        <div className="find-btn-wrap">
+          <button className="find-btn">ID 찿기 / 비밀번호 찿기</button>
+        </div>
+      </div>
+      <div className="another-login-wrap">
+        <div className="another-login-tit">다른 방법으로 로그인</div>
+        <div className="another-login-btn-wrap">
+          <button className="btn-form outline-g block">
+            <i className="kakao"></i>
+            <span>카카오 계정으로 회원 등록</span>
+          </button>
+          <button className="btn-form outline-g block">
+            <i className="naver"></i>
+            <span>네이버 계정으로 회원 등록</span>
+          </button>
+          <button className="btn-form outline-g block">
+            <i className="google"></i>
+            <span>구글 계정으로 회원 등록</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 } 

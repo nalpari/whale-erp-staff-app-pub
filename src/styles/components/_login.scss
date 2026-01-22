@@ -38,3 +38,29 @@
     width: 100%;
   }
 }
+
+.login-check-wrap{
+  @include flex(8px);
+  align-items: center;
+  margin-top: 18px;
+  .find-btn-wrap{
+    margin-left: auto;
+    .find-btn{
+      @include fontDefinition(14px, 400, 150%);
+      color: #777;
+    }
+  }
+}
+
+.another-login-wrap{
+  margin-top: 24px;
+  .another-login-tit{
+    @include fontDefinition(15px, 600, 150%);
+    color: #444;
+    margin-bottom: 14px;
+  }
+  .another-login-btn-wrap{
+    @include flex(10px);
+    flex-direction: column;
+  }
+}
