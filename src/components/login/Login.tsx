@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   return (
     <div className="login-contents">
       <div className="login-header">
@@ -13,16 +16,16 @@ export default function Login() {
       <div className="login-form">
         <div className="login-form-tit">직원 전용 Smart Application</div>
         <div className="block mb8">
-          <input type="text" className="input-frame" />
+          <input type="text" className="input-frame" placeholder="ID"/>
         </div>
         <div className="block mb8">
-          <div className="input-icon-frame">
-            <input type="text" />
+          <div className="input-icon-frame">  
+            <input type="password" placeholder="Password"/>
             <button className="input-icon-btn hide"></button>
           </div>
         </div>
         <div className="login-form-btn">
-          <button className="btn-form outline-g">회원가입</button>
+          <button className="btn-form outline-g" onClick={() => router.push("/signup")}>회원가입</button>
           <button className="btn-form login">로그인</button>
         </div>
       </div>
