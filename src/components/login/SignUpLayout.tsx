@@ -1,6 +1,9 @@
+'use client'
 import Image from 'next/image'
+import { useBottomSheetController } from '@/store/useBottomSheetController'
 
 export default function SignUpLayout() {
+  const setBankSelectSheet = useBottomSheetController((state) => state.setBankSelectSheet)
   return (
     <div className="login-contents">
       <div className="signup-filed-wrap">
@@ -152,7 +155,9 @@ export default function SignUpLayout() {
           <div className="signup-filed-item">
             <div className="signup-filed-item-tit">은행 선택</div>
             <div className="block">
-              <button className="select-form al-l">선택</button>
+              <button className="select-form al-l" onClick={() => setBankSelectSheet(true)}>
+                선택
+              </button>
             </div>
           </div>
           <div className="signup-filed-item">

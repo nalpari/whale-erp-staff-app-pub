@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .react-modal-sheet-root {
   z-index: 1000000 !important;
@@ -52,19 +52,5 @@
   align-items: center;
   button {
     flex: 1;
-  }
-}
-.array-list {
-  @include flex(12px);
-  flex-direction: column;
-  padding-top: 20px;
-  .array-item {
-    button {
-      width: 100%;
-      background-color: #fff;
-      text-align: left;
-      @include fontDefinition(15px, 500, 150%);
-      color: #444;
-    }
   }
 }
