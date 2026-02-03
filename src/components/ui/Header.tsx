@@ -1,31 +1,30 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { useBottomSheetController } from "@/store/useBottomSheetController";
-import { useRouter } from "next/navigation";
+'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import { useBottomSheetController } from '@/store/useBottomSheetController'
+import { useRouter } from 'next/navigation'
+import { usePopupController } from '@/store/usePopupController'
 
 export default function Header() {
-  const router = useRouter();
+  const router = useRouter()
   // 필요한 함수만 선택적으로 구독 (함수는 변하지 않으므로 재렌더링 방지)
-  const setStoreSheet = useBottomSheetController(
-    (state) => state.setStoreSheet
-  );
-  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const setPasswordChangePopup = usePopupController((state) => state.setPasswordChangePopup)
+  const setStoreSheet = useBottomSheetController((state) => state.setStoreSheet)
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false)
+
+  // 비밀번호 변경 팝업 열기
+  const PasswordChangePopup = () => {
+    setPasswordChangePopup(true)
+    setIsSideNavOpen(false)
+  }
   return (
     <header>
       <div className="header-inner">
         <div className="header-top">
-          <div
-            className="header-data-wrap"
-            onClick={() => router.push("/list")}
-          >
+          <div className="header-data-wrap" onClick={() => router.push('/list')}>
             <div className="header-data-img">
-              <Image
-                src="/assets/images/common/avatar_icon.svg"
-                alt="header-data-img"
-                fill
-              />
+              <Image src="/assets/images/common/avatar_icon.svg" alt="header-data-img" fill />
             </div>
             <ul className="header-data-list">
               <li className="header-data-item">
@@ -35,10 +34,7 @@ export default function Header() {
             </ul>
           </div>
           <div className="header-menu-btn">
-            <button
-              className="menu-btn"
-              onClick={() => setIsSideNavOpen(true)}
-            ></button>
+            <button className="menu-btn" onClick={() => setIsSideNavOpen(true)}></button>
           </div>
         </div>
         <div className="header-body">
@@ -49,16 +45,12 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className={`side-nav-wrap ${isSideNavOpen ? "act" : ""}`}>
+      <div className={`side-nav-wrap ${isSideNavOpen ? 'act' : ''}`}>
         <div className="side-nav-inner">
           <div className="side-nav-header">
             <div className="side-nav-header-inner">
               <div className="side-nav-header-icon">
-                <Image
-                  src="/assets/images/common/avatar_icon.svg"
-                  alt="side-nav-header-icon"
-                  fill
-                />
+                <Image src="/assets/images/common/avatar_icon.svg" alt="side-nav-header-icon" fill />
               </div>
               <div className="side-nav-header-info">
                 <div className="side-nav-header-name">
@@ -67,10 +59,7 @@ export default function Header() {
                 <div className="side-nav-header-company">Interplug corp.</div>
               </div>
             </div>
-            <button
-              className="side-close-btn"
-              onClick={() => setIsSideNavOpen(false)}
-            ></button>
+            <button className="side-close-btn" onClick={() => setIsSideNavOpen(false)}></button>
           </div>
           <div className="side-nav-logout-wrap">
             <button className="btn-form black block">로그아웃</button>
@@ -83,9 +72,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
-                  비밀번호 변경
-                </Link>
+                <button onClick={PasswordChangePopup}>비밀번호 변경</button>
               </li>
               <li className="side-nav-body-item">
                 <Link href="/" onClick={() => setIsSideNavOpen(false)}>
@@ -112,5 +99,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

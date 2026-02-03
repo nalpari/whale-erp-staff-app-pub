@@ -5,15 +5,17 @@ import { useEffect } from 'react'
 import { usePopupController } from '@/store/usePopupController'
 import QrCodePopup from '../popup/QrCodePopup'
 import Alert from '../popup/Alert'
+import PasswordChangePop from '../popup/PasswordChangePop'
 
 export default function PopupController() {
   // 필요한 상태만 선택적으로 구독
   const isQrCodePopupOpen = usePopupController((state) => state.QrCodePopup)
   const isAlertPopupOpen = usePopupController((state) => state.AlertPopup)
+  const isPasswordChangePopupOpen = usePopupController((state) => state.PasswordChangePopup)
 
   useEffect(() => {
     // body 클래스 토글
-    if (isQrCodePopupOpen || isAlertPopupOpen) {
+    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -23,12 +25,13 @@ export default function PopupController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [isQrCodePopupOpen, isAlertPopupOpen])
+  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen])
 
   return (
     <>
       {isQrCodePopupOpen && <QrCodePopup />}
       {isAlertPopupOpen && <Alert />}
+      {isPasswordChangePopupOpen && <PasswordChangePop />}
     </>
   )
 }

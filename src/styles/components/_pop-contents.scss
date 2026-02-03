@@ -1,18 +1,29 @@
 @use '../abstracts' as *;
 
-.qr-frame {
-  padding: 32px 24px 24px;
+.pop-frame {
+  padding: 28px 24px 24px;
   border-radius: 32px;
   background-color: #fff;
-  .qr-frame-tit {
-    @include fontDefinition(16px, 600, 150%);
+  .pop-frame-tit {
+    @include fontDefinition(20px, 700, 150%);
     color: #1a1a1a;
-    margin-bottom: 17px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1a1a1a;
   }
-  .qr-btn-wrap {
-    @include flex(6px);
-    margin-top: 18px;
+  .pop-btn-wrap {
+    @include flex(8px);
+    align-items: center;
+    margin-top: 24px;
   }
+}
+.qr-frame-tit {
+  @include fontDefinition(16px, 600, 150%);
+  color: #1a1a1a;
+  margin-bottom: 17px;
+}
+.qr-btn-wrap {
+  @include flex(6px);
+  margin-top: 18px;
 }
 
 .alert-wrap {
@@ -31,5 +42,21 @@
     @include flex(8px);
     justify-content: center;
     margin-top: 18px;
+  }
+}
+
+// 비밀번호 변경
+.filed-wrap {
+  margin-top: 28px;
+  .filed-item {
+    margin-top: 18px;
+    &:first-child {
+      margin-top: 0;
+    }
+    .filed-item-tit {
+      @include fontDefinition(15px, 600, 150%);
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
   }
 }

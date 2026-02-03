@@ -1,5 +1,5 @@
-import Link from "next/link";
-import "@/styles/publishpage.scss";
+import Link from 'next/link'
+import '@/styles/publishpage.scss'
 
 export default function PublishPage() {
   return (
@@ -29,17 +29,14 @@ export default function PublishPage() {
                 <span> ex) &quot;sample-class&quot;</span>
               </p>
               <p>
-                ※ img네이밍은 &quot;_&quot;로 사용, 번호 사용시 01, 02 와 같이
-                2자리 숫자 사용 <span>ex) &quot;img_sample01&quot;</span>
+                ※ img네이밍은 &quot;_&quot;로 사용, 번호 사용시 01, 02 와 같이 2자리 숫자 사용{' '}
+                <span>ex) &quot;img_sample01&quot;</span>
               </p>
               <p>
                 ※ button, select, checkbox, radio... 등 기본 설정은
                 <span> Style Guide</span>에 정의된 내용만 사용
               </p>
-              <p>
-                ※ scss파일 생성시 &quot;_&quot;를 앞에 붙힌 후 생성, 또한 해당
-                카테고리에 적합한 폴더에 생성
-              </p>
+              <p>※ scss파일 생성시 &quot;_&quot;를 앞에 붙힌 후 생성, 또한 해당 카테고리에 적합한 폴더에 생성</p>
             </div>
           </div>
           <div className="p-list-wrap">
@@ -47,12 +44,12 @@ export default function PublishPage() {
             <div className="p-list-table">
               <table>
                 <colgroup>
-                  <col style={{ width: "10%" }} />
-                  <col style={{ width: "15%" }} />
+                  <col style={{ width: '10%' }} />
+                  <col style={{ width: '15%' }} />
                   <col />
-                  <col style={{ width: "13%" }} />
-                  <col style={{ width: "20%" }} />
-                  <col style={{ width: "13%" }} />
+                  <col style={{ width: '13%' }} />
+                  <col style={{ width: '20%' }} />
+                  <col style={{ width: '13%' }} />
                 </colgroup>
                 <thead>
                   <tr>
@@ -66,20 +63,38 @@ export default function PublishPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Main</td>
-                    <td></td>
+                    <td rowSpan={3}>로그인</td>
+                    <td>로그인 페이지</td>
                     <td>
-                      <Link href={"/main"}>Main.tsx</Link>
+                      <Link href={'/login'}>Login.tsx</Link>
                     </td>
                     <td></td>
                     <td></td>
-                    <td className="c red">2025-12-24</td>
+                    <td className="c red">2026-02-03</td>
                   </tr>
                   <tr>
-                    <td>급여명세서</td>
+                    <td>본인 인증 페이지</td>
+                    <td>
+                      <Link href={'/request'}>Request.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-03</td>
+                  </tr>
+                  <tr>
+                    <td>회원가입 페이지</td>
+                    <td>
+                      <Link href={'/signup'}>SignUp.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-03</td>
+                  </tr>
+                  <tr>
+                    <td>Main</td>
                     <td></td>
                     <td>
-                      <Link href={"/salary"}>Salary.tsx</Link>
+                      <Link href={'/main'}>Main.tsx</Link>
                     </td>
                     <td></td>
                     <td></td>
@@ -92,5 +107,5 @@ export default function PublishPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
