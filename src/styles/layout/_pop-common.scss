@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .modal-popup {
   position: fixed;
@@ -24,7 +24,7 @@
       max-width: 307px;
     }
     &.alert {
-      max-width: 480px;
+      max-width: 282px;
     }
     .modal-content {
       flex: 1;
@@ -49,12 +49,11 @@
           background-color: #fff;
           border-radius: 50%;
           &:before {
-            content: "";
+            content: '';
             @include absoluteCenter;
             width: 12px;
             height: 12px;
-            background: url(/assets/images/common/pop_close.svg) no-repeat
-              center center;
+            background: url(/assets/images/common/pop_close.svg) no-repeat center center;
             background-size: cover;
           }
         }

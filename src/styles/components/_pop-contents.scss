@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .qr-frame {
   padding: 32px 24px 24px;
@@ -11,6 +11,25 @@
   }
   .qr-btn-wrap {
     @include flex(6px);
+    margin-top: 18px;
+  }
+}
+
+.alert-wrap {
+  padding: 24px 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  .alert-txt {
+    text-align: center;
+    span {
+      display: block;
+      @include fontDefinition(15px, 400, 150%);
+      color: #1a1a1a;
+    }
+  }
+  .alert-btn-wrap {
+    @include flex(8px);
+    justify-content: center;
     margin-top: 18px;
   }
 }

@@ -1,27 +1,34 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
-import { usePopupController } from "@/store/usePopupController";
-import QrCodePopup from "../popup/QrCodePopup";
+import { usePopupController } from '@/store/usePopupController'
+import QrCodePopup from '../popup/QrCodePopup'
+import Alert from '../popup/Alert'
 
 export default function PopupController() {
   // 필요한 상태만 선택적으로 구독
-  const isQrCodePopupOpen = usePopupController((state) => state.QrCodePopup);
+  const isQrCodePopupOpen = usePopupController((state) => state.QrCodePopup)
+  const isAlertPopupOpen = usePopupController((state) => state.AlertPopup)
 
   useEffect(() => {
     // body 클래스 토글
-    if (isQrCodePopupOpen) {
-      document.body.classList.add("open");
+    if (isQrCodePopupOpen || isAlertPopupOpen) {
+      document.body.classList.add('open')
     } else {
-      document.body.classList.remove("open");
+      document.body.classList.remove('open')
     }
 
     // 컴포넌트 언마운트 시 클래스 제거
     return () => {
-      document.body.classList.remove("open");
-    };
-  }, [isQrCodePopupOpen]);
+      document.body.classList.remove('open')
+    }
+  }, [isQrCodePopupOpen, isAlertPopupOpen])
 
-  return <>{isQrCodePopupOpen && <QrCodePopup />}</>;
+  return (
+    <>
+      {isQrCodePopupOpen && <QrCodePopup />}
+      {isAlertPopupOpen && <Alert />}
+    </>
+  )
 }

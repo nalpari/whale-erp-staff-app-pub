@@ -1,9 +1,11 @@
 'use client'
 import Image from 'next/image'
 import { useBottomSheetController } from '@/store/useBottomSheetController'
+import { usePopupController } from '@/store/usePopupController'
 
 export default function SignUpLayout() {
   const setBankSelectSheet = useBottomSheetController((state) => state.setBankSelectSheet)
+  const setAlertPopup = usePopupController((state) => state.setAlertPopup)
   return (
     <div className="login-contents">
       <div className="signup-filed-wrap">
@@ -211,7 +213,9 @@ export default function SignUpLayout() {
           </div>
         </div>
         <div className="signup-filed-btn">
-          <button className="btn-form login block">가입하기</button>
+          <button className="btn-form login block" onClick={() => setAlertPopup(true)}>
+            가입하기
+          </button>
         </div>
       </div>
     </div>
