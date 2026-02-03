@@ -51,12 +51,26 @@
     }
   }
 }
-
+.login-signup-wrap{
+  @include flex(8px);
+  align-items: center;
+  margin-top: 32px;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 18px 0;
+  .login-signup-tit{
+    @include fontDefinition(18px, 600, 150%);
+    color: #111;
+  }
+  button{
+    margin-left: auto;
+  }
+}
 .another-login-wrap{
   margin-top: 24px;
   .another-login-tit{
-    @include fontDefinition(15px, 600, 150%);
-    color: #444;
+    @include fontDefinition(20px, 700, 150%);
+    color: #1a1a1a;
     margin-bottom: 14px;
   }
   .another-login-btn-wrap{

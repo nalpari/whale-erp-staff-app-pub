@@ -25,18 +25,21 @@ export default function Login() {
           </div>
         </div>
         <div className="login-form-btn">
-          <button className="btn-form outline-g" onClick={() => router.push("/signup")}>회원가입</button>
-          <button className="btn-form login">로그인</button>
+          <button className="btn-form login">LOGIN</button>
         </div>
       </div>
       <div className="login-check-wrap">
         <div className="check-form-box">
           <input type="checkbox" id="login-check" />
-          <label htmlFor="login-check">로그인 유지</label>
+          <label htmlFor="login-check">ID 저장</label>
         </div>
         <div className="find-btn-wrap">
           <button className="find-btn">ID 찿기 / 비밀번호 찿기</button>
         </div>
+      </div>
+      <div className="login-signup-wrap">
+        <div className="login-signup-tit">처음 오셨나요?</div>
+        <button className="btn-form outline" onClick={() => router.push("/request")}>회원가입</button>
       </div>
       <div className="another-login-wrap">
         <div className="another-login-tit">다른 방법으로 로그인</div>
