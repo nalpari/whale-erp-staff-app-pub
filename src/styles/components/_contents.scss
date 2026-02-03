@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .badge {
   flex: none;
@@ -14,6 +14,11 @@
   &.break {
     background-color: #f7818c;
   }
+}
+
+.filed-flx {
+  @include flex(0px);
+  align-items: center;
 }
 
 // 할일 및 공휴일 리스트
