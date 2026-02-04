@@ -15,10 +15,45 @@
     background-color: #f7818c;
   }
 }
+.sub-badge {
+  display: inline-block;
+  @include fontDefinition(14px, 600, 24px);
+  color: #1a1a1a;
+  height: 24px;
+  border-radius: 8px;
+  padding: 0px 8px;
+  &.green {
+    background-color: #ebf6f2;
+    color: #36886a;
+  }
+  &.red {
+    background-color: #fef0f0;
+    color: #d42626;
+  }
+  &.brown {
+    background-color: #f3f0eb;
+    color: #886436;
+  }
+}
+.data-list-arr {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(/assets/images/contents/data_list_arr.svg) no-repeat center center;
+  background-size: cover;
+}
 
 .filed-flx {
   @include flex(0px);
   align-items: center;
+}
+.data-wrap {
+  padding: 32px 24px;
+  .data-tit {
+    @include fontDefinition(18px, 600, 150%);
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
 }
 
 // 할일 및 공휴일 리스트
@@ -87,4 +122,44 @@
   margin-top: 5px;
   @include fontDefinition(14px, 400, 150%);
   color: #f34a5a;
+}
+
+// 근무처/급여계좌 설정
+.workplace-list {
+  @include flex(12px);
+  flex-direction: column;
+  .workplace-item {
+    text-align: left;
+    padding: 24px 20px;
+    border-radius: 18px;
+    background-color: #fff;
+  }
+}
+
+.workplace-item-inner {
+  @include flex(0px);
+  align-items: center;
+  .workplace-info {
+    .workplace-info-name {
+      @include fontDefinition(16px, 600, 140%);
+      color: #1a1a1a;
+      margin-top: 8px;
+    }
+    .workplace-info-desc {
+      @include fontDefinition(15px, 400, 150%);
+      color: #505050;
+      margin-top: 4px;
+    }
+  }
+  .workplace-arr {
+    margin-left: auto;
+  }
+}
+.data-btn-wrap {
+  margin-top: 24px;
+}
+.workplace-empty {
+  @include fontDefinition(16px, 500, 150%);
+  color: #767676;
+  text-align: center;
 }

@@ -1,5 +1,9 @@
 @use '../abstracts' as *;
 
+.sheet-btn-wrap {
+  margin-top: 24px;
+}
+
 // 점포선택 리스트
 .array-list {
   @include flex(12px);
