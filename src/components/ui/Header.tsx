@@ -3,20 +3,47 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useBottomSheetController } from '@/store/useBottomSheetController'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { usePopupController } from '@/store/usePopupController'
+import { SubMenuData } from '@/data/SubMenuData'
 
 export default function Header() {
   const router = useRouter()
+  const pathname = usePathname()
+  const title = SubMenuData.find((item: { path: string }) => item.path === pathname)?.title
   // 필요한 함수만 선택적으로 구독 (함수는 변하지 않으므로 재렌더링 방지)
   const setPasswordChangePopup = usePopupController((state) => state.setPasswordChangePopup)
   const setStoreSheet = useBottomSheetController((state) => state.setStoreSheet)
   const [isSideNavOpen, setIsSideNavOpen] = useState(false)
 
+  const segments = pathname.split('/').filter(Boolean)
+  const isSubPage = segments.length >= 2
+
+  const handleBack = () => {
+    router.back()
+  }
+
   // 비밀번호 변경 팝업 열기
   const PasswordChangePopup = () => {
     setPasswordChangePopup(true)
     setIsSideNavOpen(false)
+  }
+
+  if (pathname === '/login') {
+    return null
+  }
+
+  if (isSubPage || pathname === '/request' || pathname === '/signup') {
+    return (
+      <div className="sub-header">
+        <div className="sub-header-inner">
+          <div className="sub-header-back">
+            <button onClick={handleBack}></button>
+          </div>
+          <h1 className="sub-header-title">{title}</h1>
+        </div>
+      </div>
+    )
   }
   return (
     <header>
@@ -62,13 +89,15 @@ export default function Header() {
             <button className="side-close-btn" onClick={() => setIsSideNavOpen(false)}></button>
           </div>
           <div className="side-nav-logout-wrap">
-            <button className="btn-form black block">로그아웃</button>
+            <button className="btn-form black block" onClick={() => router.push('/login')}>
+              로그아웃
+            </button>
           </div>
           <div className="side-nav-body">
             <ul className="side-nav-body-list">
               <li className="side-nav-body-item">
-                <Link href="/main" onClick={() => setIsSideNavOpen(false)}>
-                  회원 정보 수정
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  나의 정보관리
                 </Link>
               </li>
               <li className="side-nav-body-item">
@@ -76,12 +105,12 @@ export default function Header() {
               </li>
               <li className="side-nav-body-item">
                 <Link href="/" onClick={() => setIsSideNavOpen(false)}>
-                  근무 시간 조회 및 출퇴근 체크
+                  출퇴근 체크
                 </Link>
               </li>
               <li className="side-nav-body-item">
                 <Link href="/" onClick={() => setIsSideNavOpen(false)}>
-                  근로계약서
+                  근로계약
                 </Link>
               </li>
               <li className="side-nav-body-item">
@@ -91,7 +120,12 @@ export default function Header() {
               </li>
               <li className="side-nav-body-item">
                 <Link href="/" onClick={() => setIsSideNavOpen(false)}>
-                  TO-DO LIST
+                  TO-DO 체크
+                </Link>
+              </li>
+              <li className="side-nav-body-item">
+                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                  근무처/급여계좌 설정
                 </Link>
               </li>
             </ul>
