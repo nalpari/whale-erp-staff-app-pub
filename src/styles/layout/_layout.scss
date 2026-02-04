@@ -10,7 +10,6 @@
   background-color: #fff;
 }
 .container {
-  padding-top: 140px;
   flex: 1;
   background-color: #f4f5f6;
   &.main {
@@ -34,15 +33,17 @@ footer {
   }
 }
 header {
+  position: relative;
+  height: 140px;
+}
+.header-inner {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: linear-gradient(180deg, #5c5df8 0%, #4c4ddc 100%);
   z-index: 99999;
-  .header-inner {
-    padding: 0 24px;
-  }
+  padding: 0 24px;
 }
 .header-top {
   @include flex(10px);

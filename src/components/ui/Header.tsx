@@ -10,8 +10,15 @@ import { SubMenuData } from '@/data/SubMenuData'
 export default function Header() {
   const router = useRouter()
   const pathname = usePathname()
+
   // 서브 페이지 타이틀
-  const title = SubMenuData.find((item: { path: string }) => item.path === pathname)?.title
+  const title = SubMenuData.find((item: { path: string }) => {
+    // [id] 같은 동적 세그먼트를 정규식으로 변환
+    const pattern = item.path.replace(/\[.*?\]/g, '[^/]+')
+    const regex = new RegExp(`^${pattern}$`)
+    return regex.test(pathname)
+  })?.title
+
   // 필요한 함수만 선택적으로 구독 (함수는 변하지 않으므로 재렌더링 방지)
   const setPasswordChangePopup = usePopupController((state) => state.setPasswordChangePopup)
   const setStoreSheet = useBottomSheetController((state) => state.setStoreSheet)

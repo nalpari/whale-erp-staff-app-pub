@@ -7,4 +7,8 @@ export const SubMenuData = [
     title: '회원가입',
     path: '/signup',
   },
+  {
+    title: '근무처/급여계좌 설정',
+    path: '/workplace/[id]',
+  },
 ]

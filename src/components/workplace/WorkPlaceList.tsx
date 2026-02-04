@@ -1,13 +1,14 @@
 'use client'
 import { useBottomSheetController } from '@/store/useBottomSheetController'
-
+import { useRouter } from 'next/navigation'
 export default function WorkPlaceList() {
+  const router = useRouter()
   const setWorkPlaceAddSheet = useBottomSheetController((state) => state.setWorkPlaceAddSheet)
   return (
     <div className="data-wrap">
       <div className="data-tit">근무처/급여계좌 설정</div>
-      <div className="workplace-list">
-        <button className="workplace-item">
+      <div className="data-list">
+        <button className="data-item" onClick={() => router.push('/workplace/1')}>
           <div className="workplace-item-inner">
             <div className="workplace-info">
               <div className="sub-badge green">근무</div>
@@ -19,7 +20,7 @@ export default function WorkPlaceList() {
             </div>
           </div>
         </button>
-        <button className="workplace-item">
+        <button className="data-item" onClick={() => router.push('/workplace/1')}>
           <div className="workplace-item-inner">
             <div className="workplace-info">
               <div className="sub-badge brown">휴직</div>
@@ -31,7 +32,7 @@ export default function WorkPlaceList() {
             </div>
           </div>
         </button>
-        <button className="workplace-item">
+        <button className="data-item" onClick={() => router.push('/workplace/1')}>
           <div className="workplace-item-inner">
             <div className="workplace-info">
               <div className="sub-badge red">퇴사</div>
@@ -43,7 +44,7 @@ export default function WorkPlaceList() {
             </div>
           </div>
         </button>
-        <div className="workplace-item">
+        <div className="data-item">
           <div className="workplace-empty">등록된 매장정보가 없습니다.</div>
         </div>
       </div>

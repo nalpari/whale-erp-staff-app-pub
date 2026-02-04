@@ -42,17 +42,69 @@
   background: url(/assets/images/contents/data_list_arr.svg) no-repeat center center;
   background-size: cover;
 }
-
+.sub-edit-btn {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(/assets/images/contents/edit_icon.svg) no-repeat center center;
+  background-size: cover;
+}
 .filed-flx {
   @include flex(0px);
   align-items: center;
 }
 .data-wrap {
-  padding: 32px 24px;
+  padding: 32px 24px 0;
   .data-tit {
     @include fontDefinition(18px, 600, 150%);
     color: #1a1a1a;
     margin-bottom: 10px;
+  }
+}
+
+.data-delete-btn-wrap {
+  margin-bottom: 18px;
+}
+.sub-tit-wrap {
+  @include flex(0px);
+  align-items: center;
+  margin-bottom: 15px;
+  .sub-tit {
+    @include fontDefinition(18px, 600, 140%);
+    color: #1a1a1a;
+  }
+  .sub-tit-btn {
+    margin-left: auto;
+  }
+}
+
+.data-table {
+  width: 100%;
+  th {
+    @include fontDefinition(15px, 500, 140%);
+    color: #767676;
+    padding: 5px 0;
+    vertical-align: top;
+  }
+  td {
+    @include fontDefinition(15px, 400, 140%);
+    color: #1a1a1a;
+    padding: 5px 0 5px 24px;
+    vertical-align: top;
+  }
+  tr {
+    &:first-child {
+      th,
+      td {
+        padding-top: 0;
+      }
+    }
+    &:last-child {
+      th,
+      td {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
@@ -125,10 +177,10 @@
 }
 
 // 근무처/급여계좌 설정
-.workplace-list {
+.data-list {
   @include flex(12px);
   flex-direction: column;
-  .workplace-item {
+  .data-item {
     text-align: left;
     padding: 24px 20px;
     border-radius: 18px;

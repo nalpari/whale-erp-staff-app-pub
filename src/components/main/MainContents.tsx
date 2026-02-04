@@ -18,7 +18,7 @@ export default function MainContents() {
                   <div className="date-cont-info-time">10:00-18:00</div>
                 </div>
                 <div className="date-check-btn-wrap">
-                  <button className="date-check-btn black" onClick={() => setQrCodePopup(true)}>
+                  <button className="date-check-btn login" onClick={() => setQrCodePopup(true)}>
                     출근
                   </button>
                   <button className="date-check-btn outline">퇴근</button>

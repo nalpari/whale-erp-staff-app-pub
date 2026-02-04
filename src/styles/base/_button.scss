@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 /******************** btn-color 모음 *****************/
 .black {
@@ -8,37 +8,7 @@
     background-color: $normal-a-back-color;
   }
 }
-.blue {
-  background-color: $blue-back-color;
-  color: $blue-font-color;
-  &.active {
-    background-color: $blue-a-back-color;
-  }
-}
-.sky {
-  background-color: $sky-back-color;
-  color: $sky-font-color;
-  &.active {
-    background-color: $sky-a-back-color;
-  }
-  &.brd {
-    border: 1px solid $sky-font-color;
-  }
-}
-.grey {
-  background-color: $grey-back-color;
-  color: $grey-font-color;
-  &.active {
-    background-color: $grey-a-back-color;
-  }
-}
-.l-grey{
-  background-color: #EBEDEE;
-  color: #77828D;
-  .brd{
-    border: 1px solid #77828D;
-  }
-}
+
 .login {
   background-color: #77828d;
   color: #fff;
@@ -64,61 +34,72 @@
     color: #fff;
   }
 }
+.outline-r {
+  background-color: #fff;
+  color: #ff7474;
+  border: 1px solid #ff7474;
+  transition: all 0.15s ease-in-out;
+  &.act {
+    background-color: #ff7474;
+    border-color: #ff7474;
+    color: #fff;
+  }
+}
 /*************** icon *************/
 .camera {
   display: block;
   width: 20px;
   height: 20px;
-  background: url("/assets/images/contents/camera_icon.svg") no-repeat center
-    center;
+  background: url('/assets/images/contents/camera_icon.svg') no-repeat center center;
   background-size: cover;
 }
 .invite {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("/assets/images/contents/staff_invite.svg") no-repeat center
-    center;
+  background: url('/assets/images/contents/staff_invite.svg') no-repeat center center;
   background-size: cover;
 }
 .add_team {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("/assets/images/contents/add_team.svg") no-repeat center
-    center;
+  background: url('/assets/images/contents/add_team.svg') no-repeat center center;
   background-size: cover;
 }
 .plan-create {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("/assets/images/contents/plan_table_icon.svg") no-repeat
-    center center;
+  background: url('/assets/images/contents/plan_table_icon.svg') no-repeat center center;
   background-size: cover;
 }
 .kakao {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("/assets/images/common/kakao_icon.svg") no-repeat center
-    center;
+  background: url('/assets/images/common/kakao_icon.svg') no-repeat center center;
   background-size: cover;
 }
 .naver {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("/assets/images/common/naver_icon.svg") no-repeat center
-    center;
+  background: url('/assets/images/common/naver_icon.svg') no-repeat center center;
   background-size: cover;
 }
 .google {
   display: block;
   width: 24px;
   height: 24px;
-  background: url("/assets/images/common/google_icon.svg") no-repeat center
-    center;
+  background: url('/assets/images/common/google_icon.svg') no-repeat center center;
+  background-size: cover;
+}
+.delete {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('/assets/images/contents/delete_icon.svg') no-repeat center center;
   background-size: cover;
 }
 
@@ -132,7 +113,7 @@
   padding: 0px $padding;
   border-radius: 6px;
   @include fontDefinition($font-size, $font-w-600, $line-h-120);
-  font-family: "Pretendard", sans-serif;
+  font-family: 'Pretendard', sans-serif;
   letter-spacing: 0;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
