@@ -10,6 +10,7 @@ import { SubMenuData } from '@/data/SubMenuData'
 export default function Header() {
   const router = useRouter()
   const pathname = usePathname()
+  // 서브 페이지 타이틀
   const title = SubMenuData.find((item: { path: string }) => item.path === pathname)?.title
   // 필요한 함수만 선택적으로 구독 (함수는 변하지 않으므로 재렌더링 방지)
   const setPasswordChangePopup = usePopupController((state) => state.setPasswordChangePopup)
@@ -61,6 +62,7 @@ export default function Header() {
             </ul>
           </div>
           <div className="header-menu-btn">
+            <button className="home-btn" onClick={() => router.push('/')}></button>
             <button className="menu-btn" onClick={() => setIsSideNavOpen(true)}></button>
           </div>
         </div>
@@ -124,7 +126,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                <Link href="/workplace" onClick={() => setIsSideNavOpen(false)}>
                   근무처/급여계좌 설정
                 </Link>
               </li>

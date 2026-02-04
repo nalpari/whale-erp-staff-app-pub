@@ -5,7 +5,7 @@ export default function MainContents() {
   // 함수만 구독 (함수 레퍼런스는 변하지 않음)
   const setQrCodePopup = usePopupController((state) => state.setQrCodePopup)
   return (
-    <div className="container">
+    <div className="container main">
       <div className="main-contents">
         <div className="date-list-wrap">
           <div className="date-list-tit">12월 7일 금요일</div>
