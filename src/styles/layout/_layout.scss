@@ -133,7 +133,9 @@ header {
   z-index: 999999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  transition:
+    opacity 0.25s ease-in-out,
+    visibility 0.25s ease-in-out;
   &.act {
     opacity: 1;
     visibility: visible;
@@ -253,5 +255,12 @@ header {
   }
 }
 
-@media screen and (max-width: 321px) {
+.Ai {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: url(/assets/images/common/AI_icon.svg) no-repeat center center;
+  background-size: cover;
 }

@@ -4,6 +4,7 @@ import { usePopupController } from '@/store/usePopupController'
 export default function MainContents() {
   // 함수만 구독 (함수 레퍼런스는 변하지 않음)
   const setQrCodePopup = usePopupController((state) => state.setQrCodePopup)
+  const setAIChatPopup = usePopupController((state) => state.setAIChatPopup)
   return (
     <div className="container main">
       <div className="main-contents">
@@ -52,6 +53,7 @@ export default function MainContents() {
           </ul>
         </div>
       </div>
+      <button className="Ai" onClick={() => setAIChatPopup(true)}></button>
     </div>
   )
 }
