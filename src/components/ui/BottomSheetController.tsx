@@ -6,6 +6,7 @@ import StoreSheet from '../bottomSheet/StoreSheet'
 import BankSelectSheet from '../bottomSheet/BankSelect'
 import WorkPlaceAddSheet from '../bottomSheet/WorkPlaceAdd'
 import AccountSelect from '../bottomSheet/AccountSelect'
+import EmploymentNotificationSheet from '../bottomSheet/EmploymentNotificationSheet'
 
 export default function BottomSheetController() {
   // 필요한 상태만 선택적으로 구독
@@ -13,10 +14,11 @@ export default function BottomSheetController() {
   const bankSelectSheet = useBottomSheetController((state) => state.bankSelectSheet)
   const workPlaceAddSheet = useBottomSheetController((state) => state.workPlaceAddSheet)
   const accountSelectSheet = useBottomSheetController((state) => state.accountSelectSheet)
+  const employmentNotificationSheet = useBottomSheetController((state) => state.employmentNotificationSheet)
 
   useEffect(() => {
     // body 클래스 토글
-    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet) {
+    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -26,7 +28,7 @@ export default function BottomSheetController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet])
+  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet])
 
   return (
     <>
@@ -34,6 +36,7 @@ export default function BottomSheetController() {
       {bankSelectSheet && <BankSelectSheet />}
       {workPlaceAddSheet && <WorkPlaceAddSheet />}
       {accountSelectSheet && <AccountSelect />}
+      {employmentNotificationSheet && <EmploymentNotificationSheet />}
     </>
   )
 }
