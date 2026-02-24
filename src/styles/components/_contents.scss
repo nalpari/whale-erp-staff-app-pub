@@ -108,6 +108,34 @@
   }
 }
 
+// 빈 매장 페이지
+.empty-store-contents {
+  @include flex(0px);
+  flex-direction: column;
+  min-height: calc(100vh - 140px - 68px);
+  padding: 32px 24px 18px;
+  .empty-store-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .empty-store-tit {
+    @include fontDefinition(22px, 700, 150%);
+    color: #2379e4;
+    text-align: center;
+    margin-top: 24px;
+  }
+  .empty-store-txt {
+    @include fontDefinition(16px, 500, 150%);
+    color: #444;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .empty-store-btn {
+    margin-top: auto;
+  }
+}
+
 // 할일 및 공휴일 리스트
 .date-list-wrap {
   margin-top: 28px;
