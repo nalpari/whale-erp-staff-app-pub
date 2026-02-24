@@ -1,9 +1,14 @@
+'use client'
+import { usePopupController } from '@/store/usePopupController'
+
 export default function EmploymentList() {
+  const setEmploymentPopFrame = usePopupController((state) => state.setEmploymentPopFrame)
+
   return (
     <div className="data-wrap">
       <div className="data-tit">근로계약서</div>
       <div className="data-list">
-        <button className="data-item">
+        <button className="data-item" onClick={() => setEmploymentPopFrame(true)}>
           <div className="employment-item-inner">
             <div className="employment-stemp blue">
               <span>계약</span>

@@ -252,3 +252,126 @@
     }
   }
 }
+
+// 근로계약서
+.employcont-wrap {
+  background-color: #fff;
+  border-radius: 18px;
+  border: 1px solid #eff0f1;
+  .employcont-item {
+    padding: 18px 20px 24px;
+    border-bottom: 1px solid #eff0f1;
+    &:last-child {
+      border-bottom: none;
+    }
+    .employcont-item-tit {
+      @include fontDefinition(15px, 600, 140%);
+      color: #1a1a1a;
+    }
+    .employcont-item-desc {
+      @include fontDefinition(14px, 400, 130%);
+      color: #1a1a1a;
+      margin-top: 8px;
+    }
+    .employcont-item-txt {
+      @include fontDefinition(15px, 400, 130%);
+      color: #1a1a1a;
+    }
+  }
+}
+.employcont-check-warp {
+  margin-top: 24px;
+}
+.employcont-btn-wrap {
+  @include flex(8px);
+  align-items: center;
+  margin-top: 24px;
+}
+.employ-success-btn-wrap {
+  @include flex(8px);
+  align-items: center;
+  margin-bottom: 24px;
+}
+.call-number {
+  @include flex(4px);
+  align-items: center;
+  @include fontDefinition(14px, 500, 130%);
+  color: #495aff;
+  .phone {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('/assets/images/contents/phone_icon.svg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+.employcont-item-account-wrap {
+  @include flex(0px);
+  align-items: center;
+  .employcont-item-btn {
+    margin-left: auto;
+    .employcont-btn {
+      flex: none;
+      padding: 0 10px;
+      height: 32px;
+      border: 1px solid #abb7c2;
+      background-color: #fff;
+      border-radius: 100px;
+      @include fontDefinition(14px, 500, 130%);
+      color: #77828d;
+    }
+  }
+}
+
+.sign-frame-header {
+  @include flex(0px);
+  align-items: center;
+  margin-bottom: 18px;
+  .sign-frame-tit {
+    @include fontDefinition(16px, 600, 150%);
+    color: #1a1a1a;
+  }
+  .sign-reset {
+    margin-left: auto;
+    width: 32px;
+    height: 32px;
+    background: url('/assets/images/popup/reset_icon.svg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+// 계약 이력
+.contract-num {
+  @include flex(0px);
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #f4f5f6;
+  border-radius: 50%;
+  @include fontDefinition(15px, 600, 150%);
+  color: #1a1a1a;
+}
+.contract-info {
+  @include flex(12px);
+  flex-direction: column;
+  margin-top: 8px;
+  .contract-info-item {
+    @include flex(0px);
+    align-items: center;
+    .contract-info-item-tit {
+      @include fontDefinition(14px, 400, 130%);
+      color: #555;
+    }
+    .contract-info-item-desc {
+      margin-left: auto;
+      @include fontDefinition(14px, 400, 130%);
+      color: #1a1a1a;
+    }
+  }
+}
+
+.contract-history-btn-wrap {
+  margin-top: 24px;
+}

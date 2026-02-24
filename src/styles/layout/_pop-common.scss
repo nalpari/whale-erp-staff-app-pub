@@ -118,6 +118,12 @@
           padding: 24px 24px 28px;
           align-items: flex-start;
           background: linear-gradient(180deg, #5c5df8 0%, #4c4ddc 100%);
+          &.min {
+            height: 68px;
+            padding: 0 24px;
+            justify-content: center;
+            align-items: center;
+          }
           h3 {
             @include fontDefinition(18px, 700, 140%);
             color: #fff;

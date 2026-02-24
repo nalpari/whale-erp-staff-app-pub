@@ -8,6 +8,9 @@ import Alert from '../popup/Alert'
 import PasswordChangePop from '../popup/PasswordChangePop'
 import AIChat from '../popup/AIChat'
 import EmploymentNotificationPop from '../popup/EmploymentNotificationPop'
+import EmploymentPopFrame from '../popup/employment/EmploymentPopFrame'
+import SignPopup from '../popup/SignPopup'
+import ContractHistoryPop from '../popup/ContractHistoryPop'
 
 export default function PopupController() {
   // 필요한 상태만 선택적으로 구독
@@ -16,10 +19,13 @@ export default function PopupController() {
   const isPasswordChangePopupOpen = usePopupController((state) => state.PasswordChangePopup)
   const isAIChatPopupOpen = usePopupController((state) => state.AIChatPopup)
   const isEmploymentNotificationPopupOpen = usePopupController((state) => state.EmploymentNotificationPopup)
+  const isEmploymentPopFrameOpen = usePopupController((state) => state.EmploymentPopFrame)
+  const isSignPopupOpen = usePopupController((state) => state.SignPopup)
+  const isContractHistoryPopupOpen = usePopupController((state) => state.ContractHistoryPopup)
 
   useEffect(() => {
     // body 클래스 토글
-    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen || isAIChatPopupOpen || isEmploymentNotificationPopupOpen) {
+    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen || isAIChatPopupOpen || isEmploymentNotificationPopupOpen || isEmploymentPopFrameOpen || isSignPopupOpen || isContractHistoryPopupOpen) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -29,7 +35,7 @@ export default function PopupController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen, isAIChatPopupOpen, isEmploymentNotificationPopupOpen])
+  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen, isAIChatPopupOpen, isEmploymentNotificationPopupOpen, isEmploymentPopFrameOpen, isSignPopupOpen, isContractHistoryPopupOpen])
 
   return (
     <>
@@ -38,6 +44,9 @@ export default function PopupController() {
       {isPasswordChangePopupOpen && <PasswordChangePop />}
       {isAIChatPopupOpen && <AIChat />}
       {isEmploymentNotificationPopupOpen && <EmploymentNotificationPop />}
+      {isEmploymentPopFrameOpen && <EmploymentPopFrame />}
+      {isSignPopupOpen && <SignPopup />}
+      {isContractHistoryPopupOpen && <ContractHistoryPop />}
     </>
   )
 }

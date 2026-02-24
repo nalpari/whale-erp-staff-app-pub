@@ -102,6 +102,20 @@
   background: url('/assets/images/contents/delete_icon.svg') no-repeat center center;
   background-size: cover;
 }
+.download {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url('/assets/images/contents/icon_down.svg') no-repeat center center;
+  background-size: cover;
+}
+.more {
+  display: block;
+  width: 10px;
+  height: 6px;
+  background: url('/assets/images/popup/more_arr.svg') no-repeat center center;
+  background-size: cover;
+}
 
 /******************** btn-type 모음 *****************/
 // btn-frame 공통
@@ -132,7 +146,7 @@
 
 // 데스크탑 small 버튼
 .btn-form {
-  @include btn-frame(48px, 24px, $font-ds-15, 20px);
+  @include btn-frame(48px, 20px, $font-ds-15, 20px);
   &.min {
     height: 42px;
     padding: 0 16px;
