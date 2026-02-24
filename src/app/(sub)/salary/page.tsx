@@ -1,5 +1,5 @@
-import SalaryContents from "@/components/salary/SalaryContents";
+import SalaryList from '@/components/salary/SalaryList'
 
 export default function SalaryPage() {
-  return <SalaryContents />;
+  return <SalaryList />
 }

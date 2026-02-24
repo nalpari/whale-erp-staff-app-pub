@@ -77,7 +77,9 @@
     margin-left: auto;
   }
 }
-
+.data-table-wrap {
+  margin-top: 18px;
+}
 .data-table {
   width: 100%;
   th {
@@ -409,5 +411,19 @@
         display: block;
       }
     }
+  }
+}
+
+// 급여명세서
+
+.salary-tit-wrap {
+  @include flex(0px);
+  align-items: center;
+  .salary-tit {
+    @include fontDefinition(18px, 600, 140%);
+    color: #1a1a1a;
+  }
+  .salary-btn-wrap {
+    margin-left: auto;
   }
 }
