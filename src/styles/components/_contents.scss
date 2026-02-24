@@ -367,3 +367,47 @@
   color: #767676;
   text-align: center;
 }
+
+// 근로계약서
+.employment-item-inner {
+  @include flex(18px);
+  align-items: center;
+  .employment-stemp {
+    @include flex(0px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    span {
+      @include fontDefinition(13px, 700, 110%);
+    }
+    &.blue {
+      background-color: #eceeff;
+      color: #495aff;
+    }
+    &.grey {
+      background-color: #f6f7f8;
+      color: #abb7c2;
+    }
+    &.red {
+      background: rgba(255, 56, 56, 0.1);
+      color: #ff3838;
+    }
+  }
+  .employment-info {
+    .employment-info-name {
+      @include fontDefinition(16px, 600, 140%);
+      color: #1a1a1a;
+    }
+    .employment-info-desc {
+      @include fontDefinition(14px, 400, 150%);
+      color: #777;
+      margin-top: 8px;
+      span {
+        display: block;
+      }
+    }
+  }
+}

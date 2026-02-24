@@ -94,11 +94,21 @@ export default function PublishPage() {
                     <td>Main</td>
                     <td></td>
                     <td>
-                      <Link href={'/main'}>Main.tsx</Link>
+                      <Link href={'/'}>Main.tsx</Link>
                     </td>
                     <td></td>
                     <td></td>
-                    <td className="c red">2025-12-24</td>
+                    <td className="c red">2026-02-24</td>
+                  </tr>
+                  <tr>
+                    <td>근로계약</td>
+                    <td></td>
+                    <td>
+                      <Link href={'/employment'}>EmploymentList.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-24</td>
                   </tr>
                 </tbody>
               </table>
