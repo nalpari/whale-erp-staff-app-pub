@@ -7,6 +7,7 @@ import QrCodePopup from '../popup/QrCodePopup'
 import Alert from '../popup/Alert'
 import PasswordChangePop from '../popup/PasswordChangePop'
 import AIChat from '../popup/AIChat'
+import EmploymentNotificationPop from '../popup/EmploymentNotificationPop'
 
 export default function PopupController() {
   // 필요한 상태만 선택적으로 구독
@@ -14,10 +15,11 @@ export default function PopupController() {
   const isAlertPopupOpen = usePopupController((state) => state.AlertPopup)
   const isPasswordChangePopupOpen = usePopupController((state) => state.PasswordChangePopup)
   const isAIChatPopupOpen = usePopupController((state) => state.AIChatPopup)
+  const isEmploymentNotificationPopupOpen = usePopupController((state) => state.EmploymentNotificationPopup)
 
   useEffect(() => {
     // body 클래스 토글
-    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen || isAIChatPopupOpen) {
+    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen || isAIChatPopupOpen || isEmploymentNotificationPopupOpen) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -27,7 +29,7 @@ export default function PopupController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen, isAIChatPopupOpen])
+  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen, isAIChatPopupOpen, isEmploymentNotificationPopupOpen])
 
   return (
     <>
@@ -35,6 +37,7 @@ export default function PopupController() {
       {isAlertPopupOpen && <Alert />}
       {isPasswordChangePopupOpen && <PasswordChangePop />}
       {isAIChatPopupOpen && <AIChat />}
+      {isEmploymentNotificationPopupOpen && <EmploymentNotificationPop />}
     </>
   )
 }

@@ -80,8 +80,26 @@
 .modal-popup {
   &.full {
     top: 100%;
-    background: #fff;
     transition: top 0.25s ease-in-out;
+    &.ai {
+      background: #fff;
+      .modal-dialog {
+        .modal-content {
+          .modal-header {
+            background: #fff;
+            height: 66px;
+            .modal-close {
+              border: 1px solid #e3e5e5;
+              background: url('/assets/images/popup/pop_close_ai.svg') no-repeat center center;
+            }
+          }
+          .modal-body {
+            background-color: #fff;
+            padding: 0;
+          }
+        }
+      }
+    }
     &.act {
       top: 0;
     }
@@ -96,20 +114,17 @@
         display: flex;
         margin: 0;
         .modal-header {
-          justify-content: center;
-          height: 66px;
-          padding-bottom: 0;
-          background: #fff;
-          border-bottom: 1px solid #ededed;
-          &.ai {
-            border-bottom: none;
-            .modal-close {
-              background: url('/assets/images/popup/pop_close_ai.svg') no-repeat center center;
-            }
-          }
+          height: 98px;
+          padding: 24px 24px 28px;
+          align-items: flex-start;
+          background: linear-gradient(180deg, #5c5df8 0%, #4c4ddc 100%);
           h3 {
-            @include fontDefinition(20px, 600, 140%);
-            color: #1a1a1a;
+            @include fontDefinition(18px, 700, 140%);
+            color: #fff;
+            span {
+              display: block;
+              color: #e9ff7a;
+            }
           }
           .modal-close {
             position: absolute;
@@ -119,16 +134,15 @@
             width: 36px;
             height: 36px;
             margin-left: 0;
-            border: 1px solid #e2e2e2;
             background: url(/assets/images/popup/pop_close.svg) no-repeat center center;
-            background-size: 12px 12px;
             &:before {
               display: none;
             }
           }
         }
         .modal-body {
-          background-color: #fff;
+          background-color: #f4f5f6;
+          padding: 32px 24px;
         }
       }
     }

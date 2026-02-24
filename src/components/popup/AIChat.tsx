@@ -26,10 +26,10 @@ export default function AIChat() {
   }
 
   return (
-    <div className={`modal-popup full ${active ? 'act' : ''}`}>
+    <div className={`modal-popup full ai ${active ? 'act' : ''}`}>
       <div className="modal-dialog">
         <div className="modal-content">
-          <div className="modal-header ai">
+          <div className="modal-header">
             <button className="modal-close" onClick={handleClose}></button>
           </div>
           <div className="modal-body">
@@ -40,9 +40,7 @@ export default function AIChat() {
                     <div className="ai-chat-time">오후 8:21 수요일</div>
                     <ul className="ai-chat-list">
                       <li className="ai-chat-data">
-                        <span>
-                          안녕하세요, ChatBot입니다. 무엇을 도와드릴까요?
-                        </span>
+                        <span>안녕하세요, ChatBot입니다. 무엇을 도와드릴까요?</span>
                       </li>
                     </ul>
                   </div>
@@ -64,22 +62,10 @@ export default function AIChat() {
                         <span>네, 주변 매장 리스트 입니다.</span>
                       </li>
                       <li className="ai-chat-data">
-                        <span>
-                          1.별다방
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m
-                        </span>
-                        <span>
-                          1.별다방
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m
-                        </span>
-                        <span>
-                          1.별다방
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m
-                        </span>
-                        <span>
-                          1.별다방
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m
-                        </span>
+                        <span>1.별다방 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m</span>
+                        <span>1.별다방 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m</span>
+                        <span>1.별다방 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m</span>
+                        <span>1.별다방 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50m</span>
                       </li>
                     </ul>
                   </div>
@@ -96,20 +82,13 @@ export default function AIChat() {
               <div className="ai-chat-footer">
                 <div className="chat-input-wrap">
                   <input type="text" placeholder="Type a message..." />
-                  <button
-                    className="chat-mick-btn"
-                    onClick={() => setMickActive(!mickActive)}
-                  ></button>
+                  <button className="chat-mick-btn" onClick={() => setMickActive(!mickActive)}></button>
                 </div>
                 <button className="send-message-btn"></button>
               </div>
-              <div className={`ai-mick-wrap ${mickActive ? "act" : ""}`}>
+              <div className={`ai-mick-wrap ${mickActive ? 'act' : ''}`}>
                 <div className="ai-mick-icon">
-                  <Image
-                    src="/assets/images/popup/ai_mick.svg"
-                    alt="ai-mick-icon"
-                    fill
-                  />
+                  <Image src="/assets/images/popup/ai_mick.svg" alt="ai-mick-icon" fill />
                 </div>
                 <div className="ai-mick-text ">음성모드</div>
               </div>
@@ -118,5 +97,5 @@ export default function AIChat() {
         </div>
       </div>
     </div>
-  );
+  )
 }

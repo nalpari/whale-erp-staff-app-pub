@@ -9,6 +9,8 @@ type PopupControllerState = {
   setPasswordChangePopup: (isOpen: boolean) => void
   AIChatPopup: boolean
   setAIChatPopup: (isOpen: boolean) => void
+  EmploymentNotificationPopup: boolean
+  setEmploymentNotificationPopup: (isOpen: boolean) => void
 }
 
 type InitialStateType = {
@@ -16,6 +18,7 @@ type InitialStateType = {
   AlertPopup: boolean
   PasswordChangePopup: boolean
   AIChatPopup: boolean
+  EmploymentNotificationPopup: boolean
 }
 
 const initialState: InitialStateType = {
@@ -23,6 +26,7 @@ const initialState: InitialStateType = {
   AlertPopup: false,
   PasswordChangePopup: false,
   AIChatPopup: false,
+  EmploymentNotificationPopup: true,
 }
 
 export const usePopupController = create<PopupControllerState>((set) => ({
@@ -31,4 +35,5 @@ export const usePopupController = create<PopupControllerState>((set) => ({
   setAlertPopup: (isOpen: boolean) => set((state) => ({ ...state, AlertPopup: isOpen })),
   setPasswordChangePopup: (isOpen: boolean) => set((state) => ({ ...state, PasswordChangePopup: isOpen })),
   setAIChatPopup: (isOpen: boolean) => set((state) => ({ ...state, AIChatPopup: isOpen })),
+  setEmploymentNotificationPopup: (isOpen: boolean) => set((state) => ({ ...state, EmploymentNotificationPopup: isOpen })),
 }))
