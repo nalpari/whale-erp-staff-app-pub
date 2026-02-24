@@ -13,10 +13,13 @@ export default function QrCodePopup() {
           </div>
           <div className="modal-body">
             <div className="pop-frame">
-              <div className="qr-frame-tit">카메라로 QR코드를 촬영하세요.</div>
+              <div className="qr-frame-header">
+                <div className="qr-frame-tit">출퇴근 체크</div>
+                <div className="qr-frame-txt">2026년 1월5일 화요일</div>
+              </div>
               <div className="qr-cam-area" style={{ height: '175px', backgroundColor: '#101010' }}></div>
               <div className="qr-btn-wrap">
-                <button className="btn-form black block">출근하기</button>
+                <button className="btn-form login block">출근하기</button>
                 <button className="btn-form outline block">퇴근하기</button>
               </div>
             </div>

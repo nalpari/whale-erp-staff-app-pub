@@ -138,31 +138,83 @@
 
 // 할일 및 공휴일 리스트
 .date-list-wrap {
-  margin-top: 28px;
+  padding-top: 32px;
+}
+.date-list-header {
+  @include flex(0px);
+  align-items: center;
+  padding: 0 24px 18px;
+  border-bottom: 1px solid #ddd;
   .date-list-tit {
-    @include fontDefinition(18px, 600, 150%);
+    @include fontDefinition(18px, 700, 150%);
     color: #1a1a1a;
-    padding: 0 24px 18px;
-    border-bottom: 1px solid #ededed;
+  }
+  .data-jop-wrap {
+    @include flex(0px);
+    align-items: center;
+    margin-left: auto;
+    .data-jop {
+      position: relative;
+      padding-left: 22px;
+      @include fontDefinition(15px, 500, 100%);
+      color: #1a1a1a;
+      &.work {
+        padding-right: 6px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          width: 16px;
+          height: 16px;
+          background: url(/assets/images/contents/data_work_icon.svg) no-repeat center center;
+          background-size: cover;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          width: 1px;
+          height: 8px;
+          background-color: #919191;
+        }
+      }
+      &.todo {
+        padding-left: 28px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 6px;
+          width: 16px;
+          height: 16px;
+          background: url(/assets/images/contents/data_todo_icon.svg) no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
   }
 }
 
 .date-cont-list {
+  @include flex(0px);
+  flex-direction: column;
   padding: 0 24px;
   .date-cont-item {
-    padding: 24px 0 18px;
-    border-bottom: 1px solid #ededed;
+    padding: 22px 0 0;
   }
 }
 
-.date-cont-bx {
+.date-cont-header {
   position: relative;
-  @include flex(0px);
-  align-items: center;
   padding-left: 20px;
   .date-cont-ring {
     position: absolute;
-    top: 3px;
+    top: 4px;
     left: 0;
     width: 14px;
     height: 14px;
@@ -170,38 +222,110 @@
   }
 }
 .date-cont-info {
+  @include flex(0px);
+  align-items: center;
+  width: 100%;
   .date-cont-info-name {
-    @include fontDefinition(15px, 500, 150%);
+    @include fontDefinition(16px, 700, 150%);
     color: #1a1a1a;
     margin-bottom: 0px;
   }
   .date-cont-info-time {
-    @include fontDefinition(14px, 400, 150%);
-    color: #1a1a1a;
+    margin-left: auto;
+    @include fontDefinition(15px, 400, 150%);
+    color: #767676;
   }
 }
-.date-check-btn-wrap {
-  @include flex(4px);
+.date-cont-wrap {
+  @include flex(10px);
+  flex-direction: column;
+  margin-top: 15px;
+}
+.date-cont-data-item {
+  @include flex(0px);
+  align-items: center;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #e9e9e9;
+  background-color: #f5f5f5;
+  .cont-item-tit {
+    position: relative;
+    padding-left: 22px;
+    @include fontDefinition(15px, 500, 150%);
+    color: #1a1a1a;
+    &.work {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background: url(/assets/images/contents/data_work_icon.svg) no-repeat center center;
+        background-size: cover;
+      }
+    }
+    &.todo {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0px;
+        width: 16px;
+        height: 16px;
+        background: url(/assets/images/contents/data_todo_icon.svg) no-repeat center center;
+        background-size: cover;
+      }
+    }
+  }
+}
+.cont-item-data-wrap {
+  @include flex(12px);
   align-items: center;
   margin-left: auto;
-  .date-check-btn {
-    padding: 9px 14px;
-    border-radius: 80px;
+  .data-item-inner {
+    @include flex(0px);
+    .data-item-inner-item {
+      position: relative;
+      @include fontDefinition(15px, 600, 150%);
+      color: #1a1a1a;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 1px;
+        height: 8px;
+        background-color: #919191;
+      }
+      &:first-child {
+        padding-right: 6px;
+      }
+      &:last-child {
+        padding-left: 6px;
+        &::before {
+          display: none;
+        }
+      }
+      span {
+        font-weight: 400;
+        color: #555;
+      }
+    }
+  }
+  .data-item-inner-arr {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(/assets/images/contents/data_item_arr.svg) no-repeat center center;
+    background-size: cover;
   }
 }
-.date-cont-todo {
-  @include flex(8px);
-  align-items: flex-start;
-  margin-top: 5px;
-  @include fontDefinition(14px, 400, 150%);
-  color: #2379e4;
-}
-.date-cont-break {
-  @include flex(8px);
-  align-items: flex-start;
-  margin-top: 5px;
-  @include fontDefinition(14px, 400, 150%);
-  color: #f34a5a;
+.date-list-footer {
+  padding: 22px 24px 0;
 }
 
 // 근무처/급여계좌 설정

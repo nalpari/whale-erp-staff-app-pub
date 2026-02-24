@@ -16,10 +16,17 @@
     margin-top: 24px;
   }
 }
-.qr-frame-tit {
-  @include fontDefinition(16px, 600, 150%);
-  color: #1a1a1a;
-  margin-bottom: 17px;
+.qr-frame-header {
+  padding-bottom: 15px;
+  .qr-frame-tit {
+    @include fontDefinition(18px, 700, 150%);
+    color: #1a1a1a;
+  }
+  .qr-frame-txt {
+    @include fontDefinition(15px, 400, 150%);
+    color: #1a1a1a;
+    margin-top: 3px;
+  }
 }
 .qr-btn-wrap {
   @include flex(6px);
