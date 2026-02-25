@@ -703,3 +703,32 @@
     }
   }
 }
+
+// 나의 정보관리
+.mypage-item-inner {
+  @include flex(50px);
+  align-items: center;
+  .mypage-item-info {
+    .mypage-item-info-name {
+      @include fontDefinition(16px, 600, 140%);
+      color: #1a1a1a;
+    }
+    .mypage-item-info-desc {
+      margin-top: 4px;
+      @include fontDefinition(15px, 400, 140%);
+      color: #505050;
+    }
+    &.red {
+      .mypage-item-info-name {
+        color: #ff3838;
+      }
+      .mypage-item-info-desc {
+        color: #ff4c4c;
+      }
+    }
+  }
+  .mypage-item-arr {
+    margin-left: auto;
+    flex: none;
+  }
+}

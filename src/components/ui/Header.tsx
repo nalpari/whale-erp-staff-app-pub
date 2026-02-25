@@ -54,7 +54,7 @@ export default function Header() {
     )
   }
   return (
-    <header>
+    <header className={`${pathname === '/mypage' ? 'mypage' : ''}`}>
       <div className="header-inner">
         <div className="header-top">
           <div className="header-data-wrap" onClick={() => router.push('/list')}>
@@ -73,13 +73,15 @@ export default function Header() {
             <button className="menu-btn" onClick={() => setIsSideNavOpen(true)}></button>
           </div>
         </div>
-        <div className="header-body">
-          <div className="header-store-btn">
-            <button className="select-btn" onClick={() => setStoreSheet(true)}>
-              <span>힘이 나는 커피생활 을지로3가점</span>
-            </button>
+        {pathname !== '/mypage' && (
+          <div className="header-body">
+            <div className="header-store-btn">
+              <button className="select-btn" onClick={() => setStoreSheet(true)}>
+                <span>힘이 나는 커피생활 을지로3가점</span>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <div className={`side-nav-wrap ${isSideNavOpen ? 'act' : ''}`}>
         <div className="side-nav-inner">
@@ -105,7 +107,7 @@ export default function Header() {
           <div className="side-nav-body">
             <ul className="side-nav-body-list">
               <li className="side-nav-body-item">
-                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                <Link href="/mypage" onClick={() => setIsSideNavOpen(false)}>
                   나의 정보관리
                 </Link>
               </li>

@@ -120,6 +120,26 @@ export default function PublishPage() {
                     <td></td>
                     <td className="c red">2026-02-24</td>
                   </tr>
+                  <tr>
+                    <td>출퇴근체크</td>
+                    <td></td>
+                    <td>
+                      <Link href={'/commute'}>CommuteList.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-25</td>
+                  </tr>
+                  <tr>
+                    <td>TO-DO 체크</td>
+                    <td></td>
+                    <td>
+                      <Link href={'/todo'}>TodoList.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-25</td>
+                  </tr>
                 </tbody>
               </table>
             </div>

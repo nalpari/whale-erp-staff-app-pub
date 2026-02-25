@@ -35,6 +35,9 @@ footer {
 header {
   position: relative;
   height: 140px;
+  &.mypage {
+    height: 70px;
+  }
 }
 .header-inner {
   position: fixed;
@@ -48,7 +51,7 @@ header {
 .header-top {
   @include flex(10px);
   align-items: center;
-  padding: 7px 0;
+  padding: 12px 0;
   .header-store-name {
     flex: 1;
     text-align: center;
@@ -77,7 +80,7 @@ header {
   }
 }
 .header-body {
-  padding: 12px 0 20px;
+  padding: 7px 0 20px;
 }
 .header-data-wrap {
   @include flex(10px);

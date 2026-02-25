@@ -11,4 +11,8 @@ export const SubMenuData = [
     title: '근무처/급여계좌 설정',
     path: '/workplace/[id]',
   },
+  {
+    title: '프로필',
+    path: '/mypage/profile',
+  },
 ]
