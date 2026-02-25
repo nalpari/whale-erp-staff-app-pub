@@ -8,6 +8,8 @@ import WorkPlaceAddSheet from '../bottomSheet/WorkPlaceAdd'
 import AccountSelect from '../bottomSheet/AccountSelect'
 import EmploymentNotificationSheet from '../bottomSheet/EmploymentNotificationSheet'
 import CommuteDaySelect from '../bottomSheet/CommuteDaySelect'
+import AvatarSelect from '../bottomSheet/AvatarSelect'
+import PhoneChangeSheet from '../bottomSheet/PhoneChangeSheet'
 
 export default function BottomSheetController() {
   // 필요한 상태만 선택적으로 구독
@@ -17,10 +19,12 @@ export default function BottomSheetController() {
   const accountSelectSheet = useBottomSheetController((state) => state.accountSelectSheet)
   const employmentNotificationSheet = useBottomSheetController((state) => state.employmentNotificationSheet)
   const commuteDaySelectSheet = useBottomSheetController((state) => state.commuteDaySelectSheet)
+  const avatarSelectSheet = useBottomSheetController((state) => state.avatarSelectSheet)
+  const phoneChangeSheet = useBottomSheetController((state) => state.phoneChangeSheet)
 
   useEffect(() => {
     // body 클래스 토글
-    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet || commuteDaySelectSheet) {
+    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet || commuteDaySelectSheet || avatarSelectSheet || phoneChangeSheet) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -30,7 +34,7 @@ export default function BottomSheetController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet, commuteDaySelectSheet])
+  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet, commuteDaySelectSheet, avatarSelectSheet, phoneChangeSheet])
 
   return (
     <>
@@ -40,6 +44,8 @@ export default function BottomSheetController() {
       {accountSelectSheet && <AccountSelect />}
       {employmentNotificationSheet && <EmploymentNotificationSheet />}
       {commuteDaySelectSheet && <CommuteDaySelect />}
+      {avatarSelectSheet && <AvatarSelect />}
+      {phoneChangeSheet && <PhoneChangeSheet />}
     </>
   )
 }

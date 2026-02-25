@@ -732,3 +732,56 @@
     flex: none;
   }
 }
+
+.mypage-sub-wrap {
+  min-height: calc(100vh - 68px - 68px);
+  background-color: #ffff;
+  padding: 32px 24px 22px;
+}
+
+.profile-wrap {
+  @include flex(0px);
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  .profile-img {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    .img-edit-btn {
+      position: absolute;
+      bottom: -5px;
+      right: 15px;
+      width: 32px;
+      height: 32px;
+      background: url(/assets/images/contents/img_edit_icon.svg) no-repeat center center;
+      background-size: cover;
+    }
+  }
+  .profile-info {
+    margin-top: 18px;
+    text-align: center;
+    .profile-info-name {
+      @include fontDefinition(20px, 600, 120%);
+      color: #262422;
+    }
+    .profile-info-id {
+      @include fontDefinition(14px, 400, 120%);
+      color: #999;
+      margin-top: 8px;
+    }
+  }
+}
+.profile-form-wrap {
+  @include flex(24px);
+  flex-direction: column;
+}
+.profile-form-item {
+  .profile-form-item-tit {
+    @include fontDefinition(15px, 600, 140%);
+    color: #1a1a1a;
+    margin-bottom: 12px;
+  }
+}

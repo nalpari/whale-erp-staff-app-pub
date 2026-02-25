@@ -45,3 +45,14 @@
     }
   }
 }
+.avatar-select-wrap {
+  margin-top: 24px;
+  @include flex(0px);
+  justify-content: space-between;
+  .avatar-select-btn {
+    width: 62px;
+    height: 62px;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
