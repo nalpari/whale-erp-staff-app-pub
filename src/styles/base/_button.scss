@@ -19,8 +19,9 @@
   color: $out-font-color;
   border: 1px solid $out-border-color;
   &.active {
-    background-color: #444;
+    background-color: #77828d;
     color: #fff;
+    border: 1px solid #77828d;
   }
 }
 .outline-g {
@@ -150,6 +151,10 @@
   &.min {
     height: 42px;
     padding: 0 16px;
+  }
+  &.xs {
+    height: 34px;
+    padding: 0 12px;
   }
 }
 

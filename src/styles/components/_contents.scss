@@ -427,3 +427,249 @@
     margin-left: auto;
   }
 }
+
+// 출퇴근 체크
+.commute-contents {
+  @include flex(0px);
+  flex-direction: column;
+  min-height: calc(100vh - 140px - 68px);
+  .commute-contents-header {
+    padding: 22px 24px;
+    background-color: #fff;
+  }
+  .commute-contents-body {
+    flex: 1;
+    background-color: #fff;
+  }
+}
+.commute-tab-wrap {
+  @include flex(8px);
+  align-items: center;
+}
+.badge-day {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 24px;
+  height: 32px;
+  padding: 0 8px;
+  background-color: #999;
+  border-radius: 100px;
+  @include fontDefinition(15px, 600, 32px);
+  color: #fff;
+}
+.commute-date-wrap {
+  position: relative;
+  padding: 14px 24px;
+  .commute-date {
+    text-align: center;
+    @include fontDefinition(18px, 600, 32px);
+    color: #1a1a1a;
+  }
+}
+.commute-guide-wrap {
+  padding: 18px 24px;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  background: #f8f8f8;
+  span {
+    position: relative;
+    display: block;
+    padding-left: 28px;
+    @include fontDefinition(15px, 500, 150%);
+    color: #1a1a1a;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: url(/assets/images/contents/commute_guide_icon.svg) no-repeat center center;
+      background-size: cover;
+    }
+  }
+}
+
+.commute-store-list {
+  @include flex(28px);
+  flex-direction: column;
+  padding: 32px 24px 0;
+}
+
+.commute-store-header {
+  @include flex(0px);
+  .commute-store-header-tit {
+    @include fontDefinition(16px, 700, 140%);
+    color: #1a1a1a;
+  }
+  .commute-store-header-time {
+    flex: none;
+    position: relative;
+    margin-left: auto;
+    @include fontDefinition(15px, 500, 150%);
+    color: #767676;
+    padding-left: 22px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background: url(/assets/images/contents/commute_time.svg) no-repeat center center;
+      background-size: cover;
+    }
+  }
+}
+.commute-store-body {
+  @include flex(0px);
+  justify-content: space-between;
+  margin-top: 18px;
+  padding: 18px 16px;
+  border-radius: 6px;
+  border: 1px solid #e9e9e9;
+  background: #f5f5f5;
+  .commute-store-body-item {
+    text-align: center;
+    .commute-store-body-item-tit {
+      @include fontDefinition(15px, 400, 150%);
+      color: #555;
+    }
+    .commute-store-body-item-time {
+      @include fontDefinition(15px, 600, 150%);
+      color: #1a1a1a;
+      &.none {
+        color: #f29436;
+      }
+    }
+  }
+}
+.commute-btn-wrap {
+  padding: 24px 24px 22px;
+}
+
+.commute-work-date-wrap {
+  padding: 14px 24px;
+  @include flex(0px);
+  align-items: center;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  .commute-work-date {
+    @include fontDefinition(18px, 600, 150%);
+    color: #1a1a1a;
+  }
+  .data-list-arr {
+    margin-left: auto;
+  }
+}
+
+.commute-work-list {
+  @include flex(12px);
+  flex-direction: column;
+  padding: 18px 24px 22px;
+}
+.commute-work-list-item {
+  @include flex(8px);
+  min-height: 130px;
+}
+.commute-work-list-item-date {
+  flex: none;
+  @include flex(0px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 18px;
+  border-radius: 6px;
+  border: 1px solid #e9e9e9;
+  background: #f5f5f5;
+  .badge-day {
+    position: relative;
+    top: 0;
+    transform: none;
+    left: 0;
+  }
+  span {
+    display: block;
+    @include fontDefinition(15px, 400, 150%);
+    color: #1a1a1a;
+    &.num {
+      @include fontDefinition(24px, 600, 150%);
+    }
+  }
+}
+.commute-work-list-item-cont {
+  width: 100%;
+  padding: 22px 20px;
+  border-radius: 6px;
+  border: 1px solid #e9e9e9;
+  background: #fff;
+  .work-store-tit {
+    @include fontDefinition(15px, 700, 140%);
+    color: #1a1a1a;
+  }
+  .work-commute-list {
+    @include flex(0px);
+    align-items: center;
+    margin-top: 10px;
+    .work-commute-list-item {
+      position: relative;
+      @include fontDefinition(15px, 400, 150%);
+      color: #1a1a1a;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 1px;
+        height: 8px;
+        background-color: #919191;
+      }
+      &:first-child {
+        padding-right: 6px;
+      }
+      &:last-child {
+        padding-left: 6px;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .work-commute-time {
+    @include flex(8px);
+    align-items: center;
+    margin-top: 10px;
+    .work-badge {
+      padding: 0 8px;
+      height: 24px;
+      border-radius: 8px;
+      @include fontDefinition(14px, 600, 24px);
+      &.g {
+        background-color: #ebf6f2;
+        color: #36886a;
+      }
+      &.r {
+        background-color: #fef0f0;
+        color: #d42626;
+      }
+      &.o {
+        background-color: #fdefe1;
+        color: #f29436;
+      }
+    }
+    .work-time {
+      @include fontDefinition(15px, 700, 140%);
+      color: #1a1a1a;
+    }
+  }
+}
+
+.empty-work {
+  @include flex(0px);
+  align-items: center;
+  height: 100%;
+  @include fontDefinition(15px, 700, 150%);
+  color: #777;
+}

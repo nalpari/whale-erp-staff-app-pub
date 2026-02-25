@@ -113,7 +113,7 @@ export default function Header() {
                 <button onClick={PasswordChangePopup}>비밀번호 변경</button>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                <Link href="/commute" onClick={() => setIsSideNavOpen(false)}>
                   출퇴근 체크
                 </Link>
               </li>
