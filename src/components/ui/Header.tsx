@@ -128,7 +128,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="side-nav-body-item">
-                <Link href="/" onClick={() => setIsSideNavOpen(false)}>
+                <Link href="/todo" onClick={() => setIsSideNavOpen(false)}>
                   TO-DO 체크
                 </Link>
               </li>
