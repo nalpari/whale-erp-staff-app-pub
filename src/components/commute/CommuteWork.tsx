@@ -1,9 +1,13 @@
+'use client'
+import { useBottomSheetController } from '@/store/useBottomSheetController'
+
 export default function CommuteWork() {
+  const setCommuteDaySelectSheet = useBottomSheetController((state) => state.setCommuteDaySelectSheet)
   return (
     <div className="commute-contents-body">
       <div className="commute-work-date-wrap">
         <div className="commute-work-date">2025.12.08(월) ~ 2025.12.15(일)</div>
-        <button className="data-list-arr"></button>
+        <button className="data-list-arr" onClick={() => setCommuteDaySelectSheet(true)}></button>
       </div>
       <div className="commute-work-list">
         <div className="commute-work-list-item">

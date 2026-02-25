@@ -11,6 +11,8 @@ type BottomSheetControllerState = {
   setAccountSelectSheet: (isOpen: boolean) => void
   employmentNotificationSheet: boolean
   setEmploymentNotificationSheet: (isOpen: boolean) => void
+  commuteDaySelectSheet: boolean
+  setCommuteDaySelectSheet: (isOpen: boolean) => void
 }
 
 type InitialStateType = {
@@ -19,6 +21,7 @@ type InitialStateType = {
   workPlaceAddSheet: boolean
   accountSelectSheet: boolean
   employmentNotificationSheet: boolean
+  commuteDaySelectSheet: boolean
 }
 
 const initialState: InitialStateType = {
@@ -27,6 +30,7 @@ const initialState: InitialStateType = {
   workPlaceAddSheet: false,
   accountSelectSheet: false,
   employmentNotificationSheet: false,
+  commuteDaySelectSheet: false,
 }
 
 export const useBottomSheetController = create<BottomSheetControllerState>((set) => ({
@@ -36,4 +40,5 @@ export const useBottomSheetController = create<BottomSheetControllerState>((set)
   setWorkPlaceAddSheet: (isOpen: boolean) => set((state) => ({ ...state, workPlaceAddSheet: isOpen })),
   setAccountSelectSheet: (isOpen: boolean) => set((state) => ({ ...state, accountSelectSheet: isOpen })),
   setEmploymentNotificationSheet: (isOpen: boolean) => set((state) => ({ ...state, employmentNotificationSheet: isOpen })),
+  setCommuteDaySelectSheet: (isOpen: boolean) => set((state) => ({ ...state, commuteDaySelectSheet: isOpen })),
 }))

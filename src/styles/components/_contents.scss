@@ -1,20 +1,5 @@
 @use '../abstracts' as *;
 
-.badge {
-  flex: none;
-  display: inline-block;
-  @include fontDefinition(12px, 600, 150%);
-  color: #fff;
-  border-radius: 100px;
-  padding: 3px 8px;
-  margin-top: -1px;
-  &.todo {
-    background-color: #81b7fa;
-  }
-  &.break {
-    background-color: #f7818c;
-  }
-}
 .sub-badge {
   display: inline-block;
   @include fontDefinition(14px, 600, 24px);
