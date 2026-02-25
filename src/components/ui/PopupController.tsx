@@ -11,6 +11,7 @@ import EmploymentNotificationPop from '../popup/EmploymentNotificationPop'
 import EmploymentPopFrame from '../popup/employment/EmploymentPopFrame'
 import SignPopup from '../popup/SignPopup'
 import ContractHistoryPop from '../popup/ContractHistoryPop'
+import SalaryDetailFullTime from '../popup/SalaryDetailFullTime'
 
 export default function PopupController() {
   // 필요한 상태만 선택적으로 구독
@@ -22,10 +23,11 @@ export default function PopupController() {
   const isEmploymentPopFrameOpen = usePopupController((state) => state.EmploymentPopFrame)
   const isSignPopupOpen = usePopupController((state) => state.SignPopup)
   const isContractHistoryPopupOpen = usePopupController((state) => state.ContractHistoryPopup)
+  const isSalaryDetailFullTimePopupOpen = usePopupController((state) => state.SalaryDetailFullTimePopup)
 
   useEffect(() => {
     // body 클래스 토글
-    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen || isAIChatPopupOpen || isEmploymentNotificationPopupOpen || isEmploymentPopFrameOpen || isSignPopupOpen || isContractHistoryPopupOpen) {
+    if (isQrCodePopupOpen || isAlertPopupOpen || isPasswordChangePopupOpen || isAIChatPopupOpen || isEmploymentNotificationPopupOpen || isEmploymentPopFrameOpen || isSignPopupOpen || isContractHistoryPopupOpen || isSalaryDetailFullTimePopupOpen) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -35,7 +37,7 @@ export default function PopupController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen, isAIChatPopupOpen, isEmploymentNotificationPopupOpen, isEmploymentPopFrameOpen, isSignPopupOpen, isContractHistoryPopupOpen])
+  }, [isQrCodePopupOpen, isAlertPopupOpen, isPasswordChangePopupOpen, isAIChatPopupOpen, isEmploymentNotificationPopupOpen, isEmploymentPopFrameOpen, isSignPopupOpen, isContractHistoryPopupOpen, isSalaryDetailFullTimePopupOpen])
 
   return (
     <>
@@ -47,6 +49,7 @@ export default function PopupController() {
       {isEmploymentPopFrameOpen && <EmploymentPopFrame />}
       {isSignPopupOpen && <SignPopup />}
       {isContractHistoryPopupOpen && <ContractHistoryPop />}
+      {isSalaryDetailFullTimePopupOpen && <SalaryDetailFullTime />}
     </>
   )
 }

@@ -19,6 +19,8 @@ type PopupControllerState = {
   setEmploymentStep: (step: boolean) => void
   ContractHistoryPopup: boolean
   setContractHistoryPopup: (isOpen: boolean) => void
+  SalaryDetailFullTimePopup: boolean
+  setSalaryDetailFullTimePopup: (isOpen: boolean) => void
 }
 
 type InitialStateType = {
@@ -31,6 +33,7 @@ type InitialStateType = {
   SignPopup: boolean
   EmploymentStep: boolean
   ContractHistoryPopup: boolean
+  SalaryDetailFullTimePopup: boolean
 }
 
 const initialState: InitialStateType = {
@@ -43,6 +46,7 @@ const initialState: InitialStateType = {
   SignPopup: false,
   EmploymentStep: false,
   ContractHistoryPopup: false,
+  SalaryDetailFullTimePopup: false,
 }
 
 export const usePopupController = create<PopupControllerState>((set) => ({
@@ -56,4 +60,5 @@ export const usePopupController = create<PopupControllerState>((set) => ({
   setSignPopup: (isOpen: boolean) => set((state) => ({ ...state, SignPopup: isOpen })),
   setEmploymentStep: (step: boolean) => set((state) => ({ ...state, EmploymentStep: step })),
   setContractHistoryPopup: (isOpen: boolean) => set((state) => ({ ...state, ContractHistoryPopup: isOpen })),
+  setSalaryDetailFullTimePopup: (isOpen: boolean) => set((state) => ({ ...state, SalaryDetailFullTimePopup: isOpen })),
 }))

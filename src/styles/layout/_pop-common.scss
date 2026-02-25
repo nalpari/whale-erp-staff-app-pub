@@ -123,6 +123,9 @@
             padding: 0 24px;
             justify-content: center;
             align-items: center;
+            h3 {
+              @include fontDefinition(20px, 600, 140%);
+            }
           }
           h3 {
             @include fontDefinition(18px, 700, 140%);

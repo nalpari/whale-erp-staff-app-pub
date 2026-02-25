@@ -1,9 +1,14 @@
+'use client'
+import { usePopupController } from '@/store/usePopupController'
+
 export default function SalaryList() {
+  const setSalaryDetailFullTimePopup = usePopupController((state) => state.setSalaryDetailFullTimePopup)
+
   return (
     <div className="data-wrap">
       <div className="data-tit">급여명세서</div>
       <div className="data-list">
-        <button className="data-item">
+        <button className="data-item" onClick={() => setSalaryDetailFullTimePopup(true)}>
           <div className="salary-item-inner">
             <div className="salary-tit-wrap">
               <div className="salary-tit">2025년 10월 급여</div>
@@ -35,7 +40,7 @@ export default function SalaryList() {
             </div>
           </div>
         </button>
-        <button className="data-item">
+        <button className="data-item" onClick={() => setSalaryDetailFullTimePopup(true)}>
           <div className="salary-item-inner">
             <div className="salary-tit-wrap">
               <div className="salary-tit">2025년 09월 급여</div>
@@ -67,7 +72,7 @@ export default function SalaryList() {
             </div>
           </div>
         </button>
-        <button className="data-item">
+        <button className="data-item" onClick={() => setSalaryDetailFullTimePopup(true)}>
           <div className="salary-item-inner">
             <div className="salary-tit-wrap">
               <div className="salary-tit">2025년 08월 급여</div>
