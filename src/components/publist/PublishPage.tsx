@@ -140,6 +140,70 @@ export default function PublishPage() {
                     <td></td>
                     <td className="c red">2026-02-25</td>
                   </tr>
+                  <tr>
+                    <td rowSpan={7}>마이페이지</td>
+                    <td>마이페이지 메인</td>
+                    <td>
+                      <Link href={'/mypage'}>MypageList.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
+                  <tr>
+                    <td>프로필</td>
+                    <td>
+                      <Link href={'/mypage/profile'}>MypageProfile.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
+                  <tr>
+                    <td>급여 계좌 정보</td>
+                    <td>
+                      <Link href={'/mypage/account'}>MypageAccount.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
+                  <tr>
+                    <td>경력 관리</td>
+                    <td>
+                      <Link href={'/mypage/personal'}>MypagePersonal.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
+                  <tr>
+                    <td>자격증 관리</td>
+                    <td>
+                      <Link href={'/mypage/certificate'}>MypageCertificate.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
+                  <tr>
+                    <td>서류관리</td>
+                    <td>
+                      <Link href={'/mypage/document'}>MypageDocument.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
+                  <tr>
+                    <td>회원 탈퇴</td>
+                    <td>
+                      <Link href={'/mypage/withdrawal'}>MypageWithdrawal.tsx</Link>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td className="c red">2026-02-26</td>
+                  </tr>
                 </tbody>
               </table>
             </div>

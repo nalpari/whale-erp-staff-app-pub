@@ -37,7 +37,7 @@ export default function Header() {
     setIsSideNavOpen(false)
   }
 
-  if (pathname === '/login') {
+  if (pathname === '/login' || pathname === '/list') {
     return null
   }
 

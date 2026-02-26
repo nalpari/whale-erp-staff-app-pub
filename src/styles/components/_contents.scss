@@ -959,3 +959,91 @@
     }
   }
 }
+
+// 회원 탈퇴
+.withdrawal-header {
+  h1 {
+    @include fontDefinition(20px, 700, 140%);
+    color: #1a1a1a;
+  }
+  .withdrawal-header-desc {
+    @include fontDefinition(15px, 400, 140%);
+    color: #666;
+    margin-top: 8px;
+  }
+}
+
+.withdrawal-check-list {
+  @include flex(12px);
+  flex-direction: column;
+  padding: 24px 0;
+  .withdrawal-check-item {
+    @include flex(0px);
+    align-items: center;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow:
+      0 0 1px 0 rgba(0, 0, 0, 0),
+      0 0 1px 0 rgba(0, 0, 0, 0.01),
+      0 0 1px 0 rgba(0, 0, 0, 0.03),
+      0 0 1px 0 rgba(0, 0, 0, 0.04);
+    padding: 16px 20px;
+    .withdrawal-check-item-label {
+      @include fontDefinition(15px, 500, 140%);
+      color: #1a1a1a;
+    }
+    .withdrawal-check-item-icon {
+      display: block;
+      width: 32px;
+      height: 32px;
+      background: url(/assets/images/contents/withdrawal_check.svg) no-repeat center center;
+      background-size: cover;
+      margin-left: auto;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &.act {
+      .withdrawal-check-item-icon {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.withdrawal-textarea-wrap {
+  padding-bottom: 24px;
+  .withdrawal-textarea-tit {
+    @include fontDefinition(15px, 400, 140%);
+    color: #1a1a1a;
+    margin-bottom: 12px;
+  }
+  .textarea-form {
+    min-height: 120px;
+  }
+}
+.withdrawal-warning-wrap {
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: #f4ede6;
+  .withdrawal-warning-tit {
+    @include fontDefinition(15px, 700, 150%);
+    color: #cd7d2e;
+  }
+  .withdrawal-warning-desc {
+    @include fontDefinition(15px, 400, 140%);
+    color: #cd7d2e;
+  }
+}
+
+.withdrawal-check {
+  margin-top: 14px;
+}
+
+.withdrawal-btn-wrap {
+  margin-top: 24px;
+  .withdrawal {
+    background-color: #ee8924;
+    color: #fff;
+  }
+}

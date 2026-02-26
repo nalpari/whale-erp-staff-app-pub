@@ -61,7 +61,7 @@ export default function MypageList() {
             </div>
           </div>
         </button>
-        <button className="data-item">
+        <button className="data-item" onClick={() => router.push('/mypage/withdrawal')}>
           <div className="mypage-item-inner">
             <div className="mypage-item-info red">
               <div className="mypage-item-info-name">회원 탈퇴</div>

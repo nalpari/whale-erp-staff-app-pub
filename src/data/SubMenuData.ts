@@ -31,4 +31,8 @@ export const SubMenuData = [
     title: '서류관리',
     path: '/mypage/document',
   },
+  {
+    title: '회원 탈퇴',
+    path: '/mypage/withdrawal',
+  },
 ]
