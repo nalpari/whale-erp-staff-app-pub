@@ -39,7 +39,7 @@ export default function MypageList() {
             </div>
           </div>
         </button>
-        <button className="data-item">
+        <button className="data-item" onClick={() => router.push('/mypage/certificate')}>
           <div className="mypage-item-inner">
             <div className="mypage-item-info">
               <div className="mypage-item-info-name">자격증  관리</div>

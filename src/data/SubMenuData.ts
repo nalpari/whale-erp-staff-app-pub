@@ -19,4 +19,8 @@ export const SubMenuData = [
     title: '경력 관리',
     path: '/mypage/personal',
   },
+  {
+    title: '자격증 관리',
+    path: '/mypage/certificate',
+  },
 ]

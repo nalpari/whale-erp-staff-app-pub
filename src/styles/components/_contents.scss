@@ -852,6 +852,11 @@
     }
   }
 }
+.item-file-down {
+  @include fontDefinition(15px, 400, 140%);
+  color: #2379e4;
+  margin-top: 6px;
+}
 
 .mypage-block-item-empty {
   text-align: center;

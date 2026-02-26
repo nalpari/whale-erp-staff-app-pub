@@ -19,6 +19,8 @@ type BottomSheetControllerState = {
   setPhoneChangeSheet: (isOpen: boolean) => void
   personalAddSheet: boolean
   setPersonalAddSheet: (isOpen: boolean) => void
+  certificateAddSheet: boolean
+  setCertificateAddSheet: (isOpen: boolean) => void
 }
 
 type InitialStateType = {
@@ -31,6 +33,7 @@ type InitialStateType = {
   avatarSelectSheet: boolean
   phoneChangeSheet: boolean
   personalAddSheet: boolean
+  certificateAddSheet: boolean
 }
 
 const initialState: InitialStateType = {
@@ -43,6 +46,7 @@ const initialState: InitialStateType = {
   avatarSelectSheet: false,
   phoneChangeSheet: false,
   personalAddSheet: false,
+  certificateAddSheet: false,
 }
 
 export const useBottomSheetController = create<BottomSheetControllerState>((set) => ({
@@ -56,4 +60,5 @@ export const useBottomSheetController = create<BottomSheetControllerState>((set)
   setAvatarSelectSheet: (isOpen: boolean) => set((state) => ({ ...state, avatarSelectSheet: isOpen })),
   setPhoneChangeSheet: (isOpen: boolean) => set((state) => ({ ...state, phoneChangeSheet: isOpen })),
   setPersonalAddSheet: (isOpen: boolean) => set((state) => ({ ...state, personalAddSheet: isOpen })),
+  setCertificateAddSheet: (isOpen: boolean) => set((state) => ({ ...state, certificateAddSheet: isOpen })),
 }))
