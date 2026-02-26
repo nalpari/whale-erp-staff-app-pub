@@ -811,8 +811,20 @@
   @include flex(0px);
   align-items: center;
   .mypage-block-item-header-tit {
+    @include flex(0px);
+    align-items: center;
     @include fontDefinition(16px, 600, 140%);
     color: #1a1a1a;
+    .badge {
+      display: inline-block;
+      @include fontDefinition(14px, 600, 24px);
+      color: #36886a;
+      height: 24px;
+      border-radius: 8px;
+      padding: 0px 8px;
+      background-color: #ebf6f2;
+      margin-left: 8px;
+    }
   }
   .mypage-block-item-header-btn {
     margin-left: auto;

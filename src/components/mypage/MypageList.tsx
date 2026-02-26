@@ -17,7 +17,7 @@ export default function MypageList() {
             </div>
           </div>
         </button>
-        <button className="data-item">
+        <button className="data-item" onClick={() => router.push('/mypage/account')}>
           <div className="mypage-item-inner">
             <div className="mypage-item-info">
               <div className="mypage-item-info-name">급여 계좌 정보</div>

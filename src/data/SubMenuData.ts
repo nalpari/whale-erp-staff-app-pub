@@ -23,4 +23,8 @@ export const SubMenuData = [
     title: '자격증 관리',
     path: '/mypage/certificate',
   },
+  {
+    title: '급여 계좌 정보',
+    path: '/mypage/account',
+  },
 ]

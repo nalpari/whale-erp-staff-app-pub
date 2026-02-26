@@ -57,7 +57,6 @@ export default function CertificateAddSheet() {
                     <div className="msg error mt10">취득일을 선택해주세요.</div>
                   </div>
                 </div>
-
                 <div className="filed-item">
                   <div className="filed-item-tit">
                     발급 기관 <span className="imp">*</span>
