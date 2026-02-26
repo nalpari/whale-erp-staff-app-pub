@@ -27,4 +27,8 @@ export const SubMenuData = [
     title: '급여 계좌 정보',
     path: '/mypage/account',
   },
+  {
+    title: '서류관리',
+    path: '/mypage/document',
+  },
 ]

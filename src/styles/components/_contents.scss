@@ -41,6 +41,13 @@
   background: url(/assets/images/contents/sub_delete_icon.svg) no-repeat center center;
   background-size: cover;
 }
+.sub-add-btn {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(/assets/images/contents/sub_add_icon.svg) no-repeat center center;
+  background-size: cover;
+}
 .filed-flx {
   @include flex(0px);
   align-items: center;
@@ -891,6 +898,64 @@
       height: 32px;
       background: url(/assets/images/contents/add_btn_icon.svg) no-repeat center center;
       background-size: cover;
+    }
+  }
+}
+
+.document-list-wrap {
+  @include flex(24px);
+  flex-direction: column;
+}
+
+.document-list-item-header {
+  @include flex(0px);
+  align-items: center;
+  margin-bottom: 12px;
+  .document-list-item-header-tit {
+    @include fontDefinition(18px, 700, 140%);
+    color: #1a1a1a;
+  }
+  .document-list-item-header-btn {
+    margin-left: auto;
+    @include flex(8px);
+    align-items: center;
+  }
+}
+
+.document-list-item-body {
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow:
+    0 0 1px 0 rgba(0, 0, 0, 0),
+    0 0 1px 0 rgba(0, 0, 0, 0.01),
+    0 0 1px 0 rgba(0, 0, 0, 0.03),
+    0 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.file-list-wrap {
+  @include flex(8px);
+  flex-direction: column;
+  .file-list-item {
+    .file-item-wrap {
+      @include flex(8px);
+      align-items: center;
+    }
+    .file-name {
+      @include fontDefinition(15px, 400, 140%);
+      color: #2379e4;
+    }
+    .file-delete-btn {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url(/assets/images/contents/file_delete.svg) no-repeat center center;
+      background-size: cover;
+    }
+    .file-end-date {
+      @include fontDefinition(14px, 400, 140%);
+      color: #505050;
+      margin-top: 2px;
     }
   }
 }

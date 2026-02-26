@@ -23,6 +23,8 @@ type BottomSheetControllerState = {
   setCertificateAddSheet: (isOpen: boolean) => void
   accountAddSheet: boolean
   setAccountAddSheet: (isOpen: boolean) => void
+  documentAddSheet: boolean
+  setDocumentAddSheet: (isOpen: boolean) => void
 }
 
 type InitialStateType = {
@@ -37,6 +39,7 @@ type InitialStateType = {
   personalAddSheet: boolean
   certificateAddSheet: boolean
   accountAddSheet: boolean
+  documentAddSheet: boolean
 }
 
 const initialState: InitialStateType = {
@@ -51,6 +54,7 @@ const initialState: InitialStateType = {
   personalAddSheet: false,
   certificateAddSheet: false,
   accountAddSheet: false,
+  documentAddSheet: false,
 }
 
 export const useBottomSheetController = create<BottomSheetControllerState>((set) => ({
@@ -66,4 +70,5 @@ export const useBottomSheetController = create<BottomSheetControllerState>((set)
   setPersonalAddSheet: (isOpen: boolean) => set((state) => ({ ...state, personalAddSheet: isOpen })),
   setCertificateAddSheet: (isOpen: boolean) => set((state) => ({ ...state, certificateAddSheet: isOpen })),
   setAccountAddSheet: (isOpen: boolean) => set((state) => ({ ...state, accountAddSheet: isOpen })),
+  setDocumentAddSheet: (isOpen: boolean) => set((state) => ({ ...state, documentAddSheet: isOpen })),
 }))

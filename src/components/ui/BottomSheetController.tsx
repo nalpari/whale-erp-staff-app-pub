@@ -13,6 +13,7 @@ import PhoneChangeSheet from '../bottomSheet/PhoneChangeSheet'
 import PersonalAddSheet from '../bottomSheet/PersonalAddSheet'
 import CertificateAddSheet from '../bottomSheet/CertificateAddSheet'
 import AccountAddSheet from '../bottomSheet/AccountAddSheet'
+import DocumentAddSheet from '../bottomSheet/DocumentAddSheet'
 
 export default function BottomSheetController() {
   // 필요한 상태만 선택적으로 구독
@@ -27,10 +28,11 @@ export default function BottomSheetController() {
   const personalAddSheet = useBottomSheetController((state) => state.personalAddSheet)
   const certificateAddSheet = useBottomSheetController((state) => state.certificateAddSheet)
   const accountAddSheet = useBottomSheetController((state) => state.accountAddSheet)
+  const documentAddSheet = useBottomSheetController((state) => state.documentAddSheet)
 
   useEffect(() => {
     // body 클래스 토글
-    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet || commuteDaySelectSheet || avatarSelectSheet || phoneChangeSheet || personalAddSheet || certificateAddSheet || accountAddSheet) {
+    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet || commuteDaySelectSheet || avatarSelectSheet || phoneChangeSheet || personalAddSheet || certificateAddSheet || accountAddSheet || documentAddSheet) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -40,7 +42,7 @@ export default function BottomSheetController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet, commuteDaySelectSheet, avatarSelectSheet, phoneChangeSheet, personalAddSheet, certificateAddSheet, accountAddSheet])
+  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet, commuteDaySelectSheet, avatarSelectSheet, phoneChangeSheet, personalAddSheet, certificateAddSheet, accountAddSheet, documentAddSheet])
 
   return (
     <>
@@ -55,6 +57,7 @@ export default function BottomSheetController() {
       {personalAddSheet && <PersonalAddSheet />}
       {certificateAddSheet && <CertificateAddSheet />}
       {accountAddSheet && <AccountAddSheet />}
+      {documentAddSheet && <DocumentAddSheet />}
     </>
   )
 }
