@@ -15,4 +15,8 @@ export const SubMenuData = [
     title: '프로필',
     path: '/mypage/profile',
   },
+  {
+    title: '경력 관리',
+    path: '/mypage/personal',
+  },
 ]

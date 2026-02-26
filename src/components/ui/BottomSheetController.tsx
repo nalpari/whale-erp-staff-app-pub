@@ -10,6 +10,7 @@ import EmploymentNotificationSheet from '../bottomSheet/EmploymentNotificationSh
 import CommuteDaySelect from '../bottomSheet/CommuteDaySelect'
 import AvatarSelect from '../bottomSheet/AvatarSelect'
 import PhoneChangeSheet from '../bottomSheet/PhoneChangeSheet'
+import PersonalAddSheet from '../bottomSheet/PersonalAddSheet'
 
 export default function BottomSheetController() {
   // 필요한 상태만 선택적으로 구독
@@ -21,10 +22,11 @@ export default function BottomSheetController() {
   const commuteDaySelectSheet = useBottomSheetController((state) => state.commuteDaySelectSheet)
   const avatarSelectSheet = useBottomSheetController((state) => state.avatarSelectSheet)
   const phoneChangeSheet = useBottomSheetController((state) => state.phoneChangeSheet)
+  const personalAddSheet = useBottomSheetController((state) => state.personalAddSheet)
 
   useEffect(() => {
     // body 클래스 토글
-    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet || commuteDaySelectSheet || avatarSelectSheet || phoneChangeSheet) {
+    if (storeSheet || bankSelectSheet || workPlaceAddSheet || accountSelectSheet || employmentNotificationSheet || commuteDaySelectSheet || avatarSelectSheet || phoneChangeSheet || personalAddSheet) {
       document.body.classList.add('open')
     } else {
       document.body.classList.remove('open')
@@ -34,7 +36,7 @@ export default function BottomSheetController() {
     return () => {
       document.body.classList.remove('open')
     }
-  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet, commuteDaySelectSheet, avatarSelectSheet, phoneChangeSheet])
+  }, [storeSheet, bankSelectSheet, workPlaceAddSheet, accountSelectSheet, employmentNotificationSheet, commuteDaySelectSheet, avatarSelectSheet, phoneChangeSheet, personalAddSheet])
 
   return (
     <>
@@ -46,6 +48,7 @@ export default function BottomSheetController() {
       {commuteDaySelectSheet && <CommuteDaySelect />}
       {avatarSelectSheet && <AvatarSelect />}
       {phoneChangeSheet && <PhoneChangeSheet />}
+      {personalAddSheet && <PersonalAddSheet />}
     </>
   )
 }

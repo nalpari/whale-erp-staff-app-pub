@@ -34,6 +34,13 @@
   background: url(/assets/images/contents/edit_icon.svg) no-repeat center center;
   background-size: cover;
 }
+.sub-delete-btn {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(/assets/images/contents/sub_delete_icon.svg) no-repeat center center;
+  background-size: cover;
+}
 .filed-flx {
   @include flex(0px);
   align-items: center;
@@ -783,5 +790,90 @@
     @include fontDefinition(15px, 600, 140%);
     color: #1a1a1a;
     margin-bottom: 12px;
+  }
+}
+
+// 경력 관리
+.mypage-block-wrap {
+  padding: 32px 24px 22px;
+  .mypage-block-item {
+    padding: 24px 20px;
+    border-radius: 18px;
+    background-color: #fff;
+  }
+}
+
+.mypage-block-inner {
+  @include flex(12px);
+  flex-direction: column;
+}
+.mypage-block-item-header {
+  @include flex(0px);
+  align-items: center;
+  .mypage-block-item-header-tit {
+    @include fontDefinition(16px, 600, 140%);
+    color: #1a1a1a;
+  }
+  .mypage-block-item-header-btn {
+    margin-left: auto;
+    @include flex(8px);
+    align-items: center;
+  }
+}
+.mypage-block-item-body {
+  .mypage-block-item-data-list {
+    @include flex(0px);
+    align-items: center;
+    margin-top: 6px;
+    .mypage-block-item-data-list-item {
+      position: relative;
+      padding: 0 6px;
+      @include fontDefinition(15px, 400, 140%);
+      color: #505050;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 49%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 1px;
+        height: 11px;
+        background-color: #ccc;
+      }
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.mypage-block-item-empty {
+  text-align: center;
+  padding: 12px 0;
+  span {
+    display: block;
+    @include fontDefinition(15px, 500, 140%);
+    color: #505050;
+  }
+}
+
+.add-btn-wrap {
+  margin-top: 24px;
+  .add-btn {
+    @include fontDefinition(18px, 600, 140%);
+    color: #1a1a1a;
+    .add-icon {
+      display: block;
+      width: 32px;
+      height: 32px;
+      background: url(/assets/images/contents/add_btn_icon.svg) no-repeat center center;
+      background-size: cover;
+    }
   }
 }
